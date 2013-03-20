@@ -1,0 +1,7 @@
+.boldtext{
+
+font-weight: bold;
+font-family: fantasy;
+color:red;
+
+}
