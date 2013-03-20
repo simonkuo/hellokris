@@ -297,27 +297,12 @@ echo "Special Diet:&nbsp;&nbsp;" . "<label class='boldtext'>" . $row['diet'] . "
 
 echo "</br>"; 
 echo "</br>"; 
-echo "Comments:&nbsp;&nbsp;" . "<label class='boldtext'>" . $row['piercing'] . "</label>"; 
+echo "Comments:&nbsp;&nbsp;" . "<label class='boldtext'>" . $row['donorcomment'] . "</label>"; 
 
-echo "</br>"; 
-echo "</br>"; 
-echo "<label class='boldtext'>Passed Phone Screen</label>" . "<label class='boldtext'>" . $row['piercing'] . "</label>"; 
-echo "</br>"; 
-
-echo "</br>"; 
-echo "</br>"; 
 
 echo "<p><label class='boldtext'>Follow-Up</label></p>";
 
-echo "Donor Packet:&nbsp;&nbsp;" . "<label class='boldtext'>" . $row['donorpacket'] . "</label>"; 
 
-echo "</br>"; 
-echo "</br>"; 
-
-echo "Comments:&nbsp;&nbsp;" . "<label class='boldtext'>" . $row['donorcomment'] . "</label>"; 
-
-echo "</br>"; 
-echo "</br>"; 
 
 // Print_r ($_SESSION);
 echo "</br>"; 
