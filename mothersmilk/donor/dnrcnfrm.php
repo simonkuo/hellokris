@@ -399,6 +399,8 @@ $transactionnumber = $lasttransactionnumber + 1;
          exit;
        
 	}
+	//Update followup data in screenertablelog
+	update_followup_data_log($dnum,$followup_data); 
    }
 else
    {
@@ -448,6 +450,8 @@ else
 
 
    }
+   //Update followup data in screenertablelog
+   update_followup_data_log($dnum,$followup_data); 
 
 
  mysql_close($con);

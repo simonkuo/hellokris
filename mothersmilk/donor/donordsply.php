@@ -300,14 +300,18 @@ echo "</br>";
 echo "Comments:&nbsp;&nbsp;" . "<label class='boldtext'>" . $row['donorcomment'] . "</label>"; 
 
 
-echo "<p><label class='boldtext'>Follow-Up</label></p>";
+
 
 
 
 // Print_r ($_SESSION);
 echo "</br>"; 
 echo "</br>"; 
-
+?>
+<?php 
+include 'followupdsply.php';
+?>
+<?php
 
  mysql_close($con);
 
