@@ -19,62 +19,62 @@
 <div> 
 <label>Pediatrician fax needed:</label>
 <select name="pedifaxneeded" id="pedifaxneeded">
-<option value="N/A">Select</option>
-<option value="yes">yes</option>
-<option value="no">no</option>
+<option value="N/A" <?php if ($row['pedifaxneeded'] == 'N/A') echo "selected";?> >Select</option>
+<option value="yes" <?php if ($row['pedifaxneeded'] == 'yes') echo "selected";?> >yes</option>
+<option value="no" <?php if ($row['pedifaxneeded'] == 'no') echo "selected";?>>no</option>
 </select>
 <label>Date sent:</label>
-<input type = "text" name="datesentpedi" id="datesentpedi" placeholder="mm-dd-yyyy">
+<input type = "text" name="datesentpedi" id="datesentpedi" placeholder="mm-dd-yyyy" value = <?=$row['datesentpedi']?> >
 <label>Staff Init:</label>
-<input type = "text" name="staffinitdatesentpedi" id="staffinitdatesentpedi">
+<input type = "text" name="staffinitdatesentpedi" id="staffinitdatesentpedi" value = <?=$row['staffinitdatesentpedi']?> >
 <label>Date received:</label>
-<input type = "text" name="datereceivedpedi" id="datereceivepedi" placeholder="mm-dd-yyyy">
+<input type = "text" name="datereceivedpedi" id="datereceivedpedi" placeholder="mm-dd-yyyy" value = <?=$row['datereceivedpedi']?> >
 <label>Staff Init:</label>
-<input type = "text" name="staffinitdatereceivedpedi" id="staffinitdatereceivedpedi">
+<input type = "text" name="staffinitdatereceivedpedi" id="staffinitdatereceivedpedi" value = <?=$row['staffinitdatereceivedpedi']?> >
 </div>
 
 <div>
 <label>Obstetrician fax needed:</label>
 <select name="obfaxneeded" id="obfaxneeded">
-<option value="N/A">Select</option>
-<option value="yes">yes</option>
-<option value="no">no</option>
+<option value="N/A" <?php if ($row['obfaxneeded'] == 'N/A') echo "selected";?> >Select</option>
+<option value="yes" <?php if ($row['obfaxneeded'] == 'yes') echo "selected";?> >yes</option>
+<option value="no" <?php if ($row['obfaxneeded'] == 'no') echo "selected";?> >no</option>
 </select>
 <label>Date sent:</label>
-<input type = "text" name="datesentob" id="datesentob" placeholder="mm-dd-yyyy">
+<input type = "text" name="datesentob" id="datesentob" placeholder="mm-dd-yyyy" value = <?=$row['datesentob']?> >
 <label>Staff Init:</label>
-<input type = "text" name="staffinitdatesentob" id="staffinitdatesentob">
+<input type = "text" name="staffinitdatesentob" id="staffinitdatesentob" value = <?=$row['staffinitdatesentob']?> >
 <label>Date received:</label>
-<input type = "text" name="datereceivedob" id="datereceivedob" placeholder="mm-dd-yyyy">
+<input type = "text" name="datereceivedob" id="datereceivedob" placeholder="mm-dd-yyyy" value = <?=$row['datereceivedob']?> >
 <label>Staff Init:</label>
-<input type = "text" name="staffinitdatereceivedob" id="staffinitdatereceivedob">
+<input type = "text" name="staffinitdatereceivedob" id="staffinitdatereceivedob" value = <?=$row['staffinitdatereceivedob']?> >
 </div>
 
 
 <div>
 <label>Other:</label>
-<input type = "text" name="other" id="other">
+<input type = "text" name="other" id="other" value = <?=$row['other']?> >
 <label>Date sent:</label>
-<input type = "text" name="datesentother" id="datesentother" placeholder="mm-dd-yyyy">
+<input type = "text" name="datesentother" id="datesentother" placeholder="mm-dd-yyyy" value = <?=$row['datesentother']?> >
 <label>Staff Init:</label>
-<input type = "text" name="staffinitdatesentother" id="staffinitdatesentother">
+<input type = "text" name="staffinitdatesentother" id="staffinitdatesentother" value = <?=$row['staffinitdatesentother']?> >
 <label>Date received:</label>
-<input type = "text" name="datereceivedother" id="datereceivedother" placeholder="mm-dd-yyyy">
+<input type = "text" name="datereceivedother" id="datereceivedother" placeholder="mm-dd-yyyy" value = <?=$row['datereceivedother']?> >
 <label>Staff Init:</label>
-<input type = "text" name="staffinitdatereceivedother" id="staffinitdatereceivedother">
+<input type = "text" name="staffinitdatereceivedother" id="staffinitdatereceivedother" value = <?=$row['staffinitdatereceivedother']?> >
 
 </div>
 <div>
 <label>Packet Review:</label>
 <label>Date</label>
-<input type = "text" name="datepacketreview" id="datepacketreview" placeholder="mm-dd-yyyy">
+<input type = "text" name="datepacketreview" id="datepacketreview" placeholder="mm-dd-yyyy" value = <?=$row['datepacketreview']?> >
 <label>Status:</label>
-<select name="packetreviewstatus" id="packetreviewstatus">
-<option value="N/A">Select</option>
-<option value="passed">passed</option>
-<option value="fail">fail</option>
+<select name="packetreviewstatus" id="packetreviewstatus" >
+<option value="N/A" <?php if ($row['packetreviewstatus'] == 'N/A') echo "selected";?> >Select</option>
+<option value="passed" <?php if ($row['packetreviewstatus'] == 'passed') echo "selected";?> >passed</option>
+<option value="fail" <?php if ($row['packetreviewstatus'] == 'fail') echo "selected";?> >fail</option>
 </select>
 
 <label>Staff Init:</label>
-<input type = "text" name="staffinitpacketreview" id="staffinitpacketreview">
+<input type = "text" name="staffinitpacketreview" id="staffinitpacketreview" value = <?=$row['staffinitpacketreview']?> >
 </div>
