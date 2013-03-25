@@ -34,6 +34,7 @@ function update_followup_data($donor_number,$update_data){
          exit;
         }
 }
+
 function update_followup_data_log($donor_number,$update_data){
 	$update = array();
 	
@@ -51,5 +52,21 @@ function update_followup_data_log($donor_number,$update_data){
          echo 'MySQL Error: ' . mysql_error();
          exit;
         }
+}
+function insert_followup_data_log($followup_data){
+	
+	
+	$fields = '`' . implode('`, `', array_keys($followup_data)). '`';
+	$data = '\'' . implode('\', \'', $followup_data) . '\'';
+	
+	$result_followup  = mysql_query("INSERT INTO `screenertablelog` ($fields) VALUES ($data)");
+	
+	if (!$result_followup) 
+        {
+         echo "DB Error, could not query the database for followup data\n";
+         echo 'MySQL Error: ' . mysql_error();
+         exit;
+        }
+
 }
 ?>
