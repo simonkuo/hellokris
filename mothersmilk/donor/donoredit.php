@@ -106,13 +106,15 @@ $transfusionchoose = $row['transfusionchoose'];
 $transfusion = $row['transfusion'];
 $workchoose = $row['workchoose'];
 $work = $row['work'];
+$tattooschoose = $row['tattooschoose'];
+$tattoos = $row['tattoos'];
 $heptest = $row['heptest'];
 $hivtest = $row['hivtest'];
 $tbtest = $row['tbtest'];
 $tbtreat = $row['tbtreat']; 
 $herpeschoose = $row['herpeschoose'];
 $herpes = $row['herpes'];
-$hemophiliana = $row["hemophiliana"];
+$hemophilia = $row["hemophilia"];
 $hormones = $row["hormones"];
 $ukmoschoose = $row["ukmoschoose"];
 $ukmos = $row["ukmos"];
@@ -1029,28 +1031,9 @@ Europe '80 5+yrs (Y/N)(Yrs):&nbsp;&nbsp;
 
 echo "Special Diet:";
 echo "</br>";
-switch ($diet)
-{
-case 'Reg':
-  $dietreg = 'checked';
-	break;
-case 'Dfree':
-  $dietdfree = 'checked';
-  break;
-case 'Veg':
-  $dietveg = 'checked';
-  break;
-case 'Vegan':
-  $dietvegan = 'checked';
-  break;
-case 'Other':
-  $dietother = 'checked';
-  break;
-default:
-  echo "";
-}
+
 ?>
-<input type="checkbox" name="diet" value="Reg" <?php echo $dietreg ?>> Regular
+<input type="checkbox" name="Reg" value="Reg" <?php if(Reg=="on")echo checked?>> Regular
 <input type="checkbox" name="diet" value="Dfree" <?php echo $dietdfree ?>> Dairy-Free
 <input type="checkbox" name="diet" value="Veg" <?php echo $dietveg ?>> Vegetarian(eggs/dairy)
 <input type="checkbox" name="diet" value="Vegan" <?php echo $dietvegan ?>> Vegan
