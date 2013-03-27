@@ -143,8 +143,9 @@ if ($followup_data['staffinitdatereceivedother'] != '')
 {
 echo "<label>Staff Init:</label> <span>" . $followup_data['staffinitdatereceivedother'] . "</span>" ;
 }
-}
 echo "</div>";
+}
+
 
 if ($followup_data['datepacketreview'] != '' || $followup_data['packetreviewstatus'] != '' ||$followup_data['staffinitpacketreview'] != '' )
 {
@@ -161,10 +162,10 @@ if ($followup_data['staffinitpacketreview'] != '')
 {
 echo "<label>Staff Init:</label> <span>" . $followup_data['staffinitpacketreview'].  "</span>";
 }
-
+echo "</div>";
 
 }
-echo "</div>";
+
 
 ?>
 

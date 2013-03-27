@@ -101,6 +101,25 @@ if ($row['datereceivedother'] != '')
 {
 echo "<label>Staff Init:</label> <span>" . $row['staffinitdatereceivedother'] . "</span>" ;
 }
+echo "</div>";
+}
+
+
+if ($row['datepacketreview'] != '' || $row['packetreviewstatus'] != '' ||$row['staffinitpacketreview'] != '' )
+{
+echo "<div><label>Packet Review:</label>";
+if ($row['datepacketreview'] != '')
+{
+echo "<label>Date:</label> <span>" . $row['datepacketreview'] . "</span>";
+}
+if ($row['packetreviewstatus'] != '')
+{
+echo "<label>Status:</label> <span>" . $row['packetreviewstatus'] . "</span>";
+}
+if ($row['staffinitpacketreview'] != '')
+{
+echo "<label>Staff Init:</label> <span>" . $row['staffinitpacketreview'].  "</span>";
 }
 echo "</div>";
+}
 ?>

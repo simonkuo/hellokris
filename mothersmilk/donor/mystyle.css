@@ -16,3 +16,13 @@ body{
 	padding-right:10px;
 
 }
+/* -------- Thanh style---------------*/
+label
+{
+  padding-right: 5px;
+}
+span
+{
+	font-weight: bold;
+	padding-right: 5px;
+}
