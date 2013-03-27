@@ -26,7 +26,7 @@ function update_followup_data($donor_number,$update_data){
 	
 
 	$update_followup = mysql_query("UPDATE `screenertable` SET " . implode(', ', $update) . " WHERE `donornumber` = " . $donor_number);
-	
+	echo "UPDATE `screenertable` SET " . implode(', ', $update) . " WHERE `donornumber` = " . $donor_number ;
 	if (!$update_followup) 
         {
          echo "DB Error, could not update the database for followup data\n";
@@ -35,7 +35,7 @@ function update_followup_data($donor_number,$update_data){
         }
 }
 
-function update_followup_data_log($donor_number,$update_data){
+function update_followup_data_log($transaction_number,$update_data){
 	$update = array();
 	
 	foreach ($update_data as $field=>$data)
@@ -44,7 +44,7 @@ function update_followup_data_log($donor_number,$update_data){
 	}
 	
 	
-	$update_followup = mysql_query("UPDATE `screenertablelog` SET " . implode(', ', $update) . " WHERE `donornumber` = " . $donor_number);
+	$update_followup = mysql_query("UPDATE `screenertablelog` SET " . implode(', ', $update) . " WHERE `donornumber` = " . $transaction_number);
 	
 	if (!$update_followup) 
         {
