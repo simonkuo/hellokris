@@ -105,7 +105,7 @@ echo "</br>";
 echo "</br>"; 
 
 echo "Application Status:" . "&nbsp;&nbsp;&nbsp;" . "<label class='boldtext'>" . $row['determinechoose'] . "</label>"; 
-if ($row['determinechoose'] == "A"||"P"||"NP"||"F") 
+if ($row['determinechoose'] == "A"|"P"|"NP"|"F") 
         {
             echo "&nbsp;&nbsp;&nbsp;Date:&nbsp;&nbsp;" . "<label class='boldtext'>" . $row['determine'] . "</label>"; 
         }
@@ -293,7 +293,17 @@ echo "</br>";
 echo "</br>"; 
 
 
-echo "Special Diet:&nbsp;&nbsp;" . "<label class='boldtext'>" . $row['diet'] . "</label>";
+echo "Special Diet: &nbsp;&nbsp;";   
+if ($row['reg']=="Reg")     {     echo "&nbsp;&nbsp;&nbsp;" . "<label class='boldtext'>" . $row['reg'] . "</label>";     }     
+if ($row['dfree']=="Dfree")     {        echo
+"&nbsp;&nbsp;&nbsp;" . "<label class='boldtext'>" . $row['dfree'] . "</label>";     }     
+if ($row['veg']=="Veg")
+{        echo "&nbsp;&nbsp;&nbsp;" . "<label class='boldtext'>" . $row['veg'] . "</label>";}      
+if
+($row['vegan']=="Vegan")     {        echo "&nbsp;&nbsp;&nbsp;" . "<label class='boldtext'>" . $row['vegan'] .
+"</label>";     }     
+if ($row['others']=="Other")     {        echo "&nbsp;&nbsp;&nbsp;" . "<label
+class='boldtext'>" . $row['others'] . "</label>";     } 
 
 echo "</br>"; 
 echo "</br>"; 

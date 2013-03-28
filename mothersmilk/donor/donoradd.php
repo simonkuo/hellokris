@@ -396,9 +396,7 @@ UK '80-96 3+MOS. (Y/N)(Yrs):&nbsp;&nbsp;
 
 <?php
 
-echo "</br>";
-echo "</br>";
-?>
+echo "</br>"; echo "</br>"; ?>
 
 Europe '80 5+yrs (Y/N)(Yrs):&nbsp;&nbsp;
 
@@ -411,21 +409,24 @@ Europe '80 5+yrs (Y/N)(Yrs):&nbsp;&nbsp;
 
 <input type ="text" name="euro" id="euro" style="display:none;position:relative;visibility:hidden; " value= "" size=20 maxlength=20 placeholder = "years">  
 
+
+<p>
+<?php
+
+echo "Special Diet:";
+echo "</br>";
+
+?>
+<input type="checkbox" name="reg" value="Reg" > Regular
+<input type="checkbox" name="dfree" value="Dfree" > Dairy-Free
+<input type="checkbox" name="veg" value="Veg" > Vegetarian(eggs/dairy)
+<input type="checkbox" name="vegan" value="Vegan" > Vegan
+<input type="checkbox" name="others" value="Other" > Other
+
+</p>
 <?php
 echo "</br>";
 echo "</br>";
-echo "Donor Packet:&nbsp;&nbsp;";
-echo "<select name=\"donorpacket\">\n";
-echo "<option value=\"N/A\">Please select</option>\n";
-echo "<option value=\"Sent\">Sent</option>\n";
-echo "<option value=\"Received\">Received</option>\n";
-echo "</select>\n";
-
-
-echo "</br>\n";
-echo "</br>\n";
-
-
 echo "Comments (100 characters)";
 
 echo "</br>\n";
@@ -434,9 +435,8 @@ echo "</br>\n";
 echo "\n";
 
 
-echo "<textarea name=\"donorcomment\" rows=\"2\" cols=\"50\" maxlength=\"102\" >\n";
-echo "</textarea>\n";
-echo "\n";
+echo "<textarea name=\"donorcomment\" rows=\"2\" cols=\"50\" maxlength=\"102\"
+>\n"; echo "</textarea>\n"; echo "\n";
 
 echo "</br>\n";
 

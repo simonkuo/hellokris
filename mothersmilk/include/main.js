@@ -8,6 +8,7 @@
       {  
         var s = document.getElementById(es);
         var h = document.getElementById(ei);
+
             if( s.selectedIndex == other ) 
                {
 		  h.style.display = "inline";
@@ -24,14 +25,30 @@
       {  
         var s = document.getElementById(es);
         var h = document.getElementById(ei);
+        var flag = document.getElementById("process");
             if( s.selectedIndex == 1|| s.selectedIndex ==2||s.selectedIndex ==3||s.selectedIndex ==4) 
                {
-		  h.style.display = "inline";
-                  h.style.visibility="visible";  
+		              h.style.display = "inline";
+                  h.style.visibility="visible";
+
+                  if(s.selectedIndex ==3||s.selectedIndex ==4)
+                  {
+
+                    
+                        flag.value = "on";
+                       alert(flag.value);
+                  }
+                  else{
+
+                    flag.value = "";
+                    alert(flag.value);
+                  }
+                  
                }
             else
-               {  
-		  h.style.display = "none";
+               {
+
+		              h.style.display = "none";
                   h.style.visibility="hidden";  
                }  
       } 

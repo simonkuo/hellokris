@@ -122,6 +122,11 @@ $eurochoose = $row["eurochoose"];
 $euro = $row["euro"];
 $diet = $row["diet"];
 $donateamount = $row['donateamount'];
+$reg = $row['reg'];
+$dfree = $row['dfree'];
+$veg = $row['veg'];
+$vegan = $row['vegan'];
+$others = $row['others'];
 
 
 
@@ -143,81 +148,39 @@ echo "Doner number:&nbsp;&nbsp;&nbsp;" . "<b>$dnum</b>";
 echo "</br>\n";
 echo "</br>\n";
 
-switch ($determinechoose)
-{
-case 'N/A':
-  $dna = 'selected';
-  break;
-case 'A':
-  $dA = 'selected';
-  break;
-case 'P':
-  $dP = 'selected';
-  break;
-case 'NP':
-  $dNP = 'selected';
-  break;
-case 'F':
-  $dF = 'selected';
-  
-  break;
-case 'D':
-  $dD = 'selected';
-  
-  break;
-case 'C':
-  $dC = 'selected';
-  break;
-default:
-  echo "";
-}
 
-if($determinechoose == "A"||"P"||"NP"||"F")
+if($determinechoose == "A"|"P"|"NP"|"F")
 {
 	$switching = "visiable";
 	$switching2 = "inline";
+  
 }
 else{
 	$switching = "hidden";
 	$switching2 = "none";
+  
 }
 ?>
 
 Application Status:&nbsp;&nbsp;&nbsp;
 
 <select name="determinechoose" id="determinechoose" onchange="showme2('determinechoose','determine')">
-<option value="N/A" <?php echo $dna ?>>Please Select</option>   
-<option value="A" <?php echo $dA ?>>Applied or Awaiting</option>
-<option value="P" <?php echo $dP ?>>Passed Phone Screen</option>
-<option value="NP" <?php echo $dNP ?>>No Passed Phone Screen</option>
-<option value="F" <?php echo $dF ?>>Failed</option>
-<option value="D" <?php echo $dD ?>>Donor Accepted</option>
-<option value="C" <?php echo $dC ?>>Closed</option>
+<option value="N/A" <?php if($determinechoose=="N/A") echo 'selected' ?>>Please Select</option>   
+<option value="A" <?php if($determinechoose=="A") echo 'selected' ?>>Applied or Awaiting</option>
+<option value="P" <?php if($determinechoose=="P") echo 'selected' ?>>Passed Phone Screen</option>
+<option value="NP" <?php if($determinechoose=="NP") echo 'selected' ?>>No Passed Phone Screen</option>
+<option value="F" <?php if($determinechoose=="F") echo 'selected'?>>Failed</option>
+<option value="D" <?php if($determinechoose=="D") echo 'selected'?>>Donor Accepted</option>
+<option value="C" <?php if($determinechoose=="C") echo 'selected' ?>>Closed</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 
 <input type ="text" name="determine" id="determine" style="display:<?php echo $switching2 ?>;position:relative;visibility:<?php echo $switching ?>; " value= "<?php echo $determine ?> " size=20 maxlength=20 placeholder = "mm-dd-yyyy">  
-
+<input type = "text" id="process" value="<?php echo $process ?>" style = "visibility:hidden"></input>
 
 <?php
-echo $process;
-switch ($organization)
-{
-case 'IND':
-  $ind = 'selected';
-  break;
-case 'STN':
-  $stn = 'selected';
-  break;
-case 'JHH':
-  $jhh = 'selected';
-  break;
-case 'OTH':
-  $oth = 'selected';
-  break;
-default:
-  echo "";
-}
+
+
 
 if($organization == "OTH")
 {
@@ -236,10 +199,10 @@ echo "</br>\n";
 Organization:&nbsp;&nbsp;&nbsp;
 
 <select name="organization" id="organization" onchange="showme('organization','organizationother',3)">  
-<option value="IND" <?php echo $ind ?>>Individual</option>
-<option value="STN" <?php echo $stn ?>>Stanford</option>  
-<option value="JHH" <?php echo $jhh ?>>John Hopkns</option>
-<option value="OTH" <?php echo $oth ?>>Other</option>
+<option value="IND" <?php if($organization=="IND") echo 'selected' ?>>Individual</option>
+<option value="STN" <?php if($organization=="STN") echo 'selected' ?>>Stanford</option>  
+<option value="JHH" <?php if($organization=="JHH") echo 'selected' ?>>John Hopkns</option>
+<option value="OTH" <?php if($organization=="OTH") echo 'selected' ?>>Other</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 
@@ -435,20 +398,7 @@ echo "</select>\n";
 <p>
 <?php
 
-switch ($rxbcchoose)
-{
-case 'N/A':
-  $rxna = 'selected';
-	break;
-case 'Yes':
-  $rxyes = 'selected';
-  break;
-case 'No':
-  $rxno = 'selected';
-  break;
-default:
-  echo "";
-}
+
 if($rxbcchoose == "Yes")
 {
 	$switching = "visiable";
@@ -464,9 +414,9 @@ else{
 RX/BC Pll/OTC Use (Y/N)(Dates):&nbsp;&nbsp;&nbsp;
 
 <select name="rxbcchoose" id="rxbcchoose" onchange="showme('rxbcchoose','rxbcdate',1)">
-<option value="N/A" <?php echo $rxna ?>>Please Select</option>   
-<option value="Yes" <?php echo $rxyes ?>>Yes</option>
-<option value="No" <?php echo $rxno ?>>No</option>
+<option value="N/A" <?php if($rxbcchoose=="N/A") echo 'selected' ?>>Please Select</option>   
+<option value="Yes" <?php if($rxbcchoose=="Yes") echo 'selected' ?>>Yes</option>
+<option value="No" <?php if($rxbcchoose=="No") echo 'selected' ?>>No</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 
@@ -476,20 +426,7 @@ RX/BC Pll/OTC Use (Y/N)(Dates):&nbsp;&nbsp;&nbsp;
 <p>
 <?php
 
-switch ($herbschoose)
-{
-case 'N/A':
-  $herbna = 'selected';
-	break;
-case 'Yes':
-  $herbyes = 'selected';
-  break;
-case 'No':
-  $herbno = 'selected';
-  break;
-default:
-  echo "";
-}
+
 if($herbschoose == "Yes")
 {
 	$switching = "visiable";
@@ -505,9 +442,9 @@ else{
 Supplements w/Herbs/Herb Teas (Y/N)(Dates):&nbsp;&nbsp;
 
 <select name="herbschoose" id="herbschoose" onchange="showme('herbschoose','herbs',1)">
-<option value="N/A" <?php echo $herbna ?>>Please Select</option>   
-<option value="Yes" <?php echo $herbyes ?>>Yes</option>
-<option value="No" <?php echo $herbno ?>>No</option>
+<option value="N/A" <?php if($herbschoose=="N/A") echo 'selected' ?>>Please Select</option>   
+<option value="Yes" <?php if($herbschoose=="Yes") echo 'selected' ?>>Yes</option>
+<option value="No" <?php if($herbschoose=="No") echo 'selected' ?>>No</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 
@@ -518,20 +455,7 @@ Supplements w/Herbs/Herb Teas (Y/N)(Dates):&nbsp;&nbsp;
 </p>
 <p>
 <?php
-switch ($alcoholchoose)
-{
-case 'N/A':
-  $alcoholna = 'selected';
-	break;
-case 'Yes':
-  $alcoholyes = 'selected';
-  break;
-case 'No':
-  $alcoholno = 'selected';
-  break;
-default:
-  echo "";
-}
+
 if($alcoholchoose == "Yes")
 {
 	$switching = "visiable";
@@ -547,9 +471,9 @@ else{
 Alcohol while pumping (Y/N)(Dates):&nbsp;&nbsp;
 
 <select name="alcoholchoose" id="alcoholchoose" onchange="showme('alcoholchoose','alcohol',1)">
-<option value="N/A" <?php echo $alcoholna ?>>Please Select</option>   
-<option value="Yes" <?php echo $alcoholyes ?>>Yes</option>
-<option value="No" <?php echo $alcoholno ?>>No</option>
+<option value="N/A" <?php if($alcoholchoose=="N/A") echo 'selected' ?>>Please Select</option>   
+<option value="Yes" <?php if($alcoholchoose=="Yes") echo 'selected' ?>>Yes</option>
+<option value="No" <?php if($alcoholchoose=="No") echo 'selected' ?>>No</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 
@@ -609,20 +533,7 @@ echo "</select>\n";
 </p>
 <p>
 <?php
-switch ($transfusionchoose)
-{
-case 'N/A':
-  $transfusionna = 'selected';
-	break;
-case 'Yes':
-  $transfusionyes = 'selected';
-  break;
-case 'No':
-  $transfusionno = 'selected';
-  break;
-default:
-  echo "";
-}
+
 if($transfusionchoose == "Yes")
 {
 	$switching = "visiable";
@@ -637,9 +548,9 @@ else{
 Transfusion (Y/N)(Dates):&nbsp;&nbsp;
 
 <select name="transfusionchoose" id="transfusionchoose" onchange="showme('transfusionchoose','transfusion',1)">
-<option value="N/A" <?php echo $transfusionna ?>>Please Select</option>   
-<option value="Yes" <?php echo $transfusionyes ?>>Yes</option>
-<option value="No" <?php echo $transfusionno ?>>No</option>
+<option value="N/A" <?php if($transfusionchoose=="N/A") echo 'selected' ?>>Please Select</option>   
+<option value="Yes" <?php if($transfusionchoose=="Yes") echo 'selected' ?>>Yes</option>
+<option value="No" <?php if($transfusionchoose=="No") echo 'selected' ?>>No</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 
@@ -649,20 +560,8 @@ Transfusion (Y/N)(Dates):&nbsp;&nbsp;
 </p>
 <p>
 <?php
-switch ($workchoose)
-{
-case 'N/A':
-  $workna = 'selected';
-	break;
-case 'Yes':
-  $workyes = 'selected';
-  break;
-case 'No':
-  $workno = 'selected';
-  break;
-default:
-  echo "";
-}
+
+
 if($workchoose == "Yes")
 {
 	$switching = "visiable";
@@ -678,9 +577,9 @@ else{
 Work Hi-Risk/Blood (Y/N)(Dates):&nbsp;&nbsp;
 
 <select name="workchoose" id="workchoose" onchange="showme('workchoose','work',1)">
-<option value="N/A" <?php echo $workna ?>>Please Select</option>   
-<option value="Yes" <?php echo $workyes ?>>Yes</option>
-<option value="No" <?php echo $workno ?>>No</option>
+<option value="N/A" <?php if($workchoose=="N/A") echo 'selected' ?>>Please Select</option>   
+<option value="Yes" <?php if($workchoose=="Yes") echo 'selected' ?>>Yes</option>
+<option value="No" <?php if($workchoose=="No") echo 'selected' ?>>No</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 
@@ -719,9 +618,9 @@ else{
 Tattoos/Piercing (Y/N)(Dates):&nbsp;&nbsp;
 
 <select name="tattooschoose" id="tattooschoose" onchange="showme('tattooschoose','tattoos',1)">
-<option value="N/A" <?php echo $tattoosna ?>>Please Select</option>   
-<option value="Yes" <?php echo $tattoosyes ?>>Yes</option>
-<option value="No" <?php echo $tattoosno ?>>No</option>
+<option value="N/A" <?php if($tattooschoose=="N/A") echo 'selected' ?>>Please Select</option>   
+<option value="Yes" <?php if($tattooschoose=="Yes") echo 'selected' ?>>Yes</option>
+<option value="No" <?php if($tattooschoose=="No") echo 'selected' ?>>No</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 
@@ -847,20 +746,6 @@ echo "</select>\n";
 <p>
 <?php
 
-switch ($herpeschoose)
-{
-case 'N/A':
-  $herpesna = 'selected';
-	break;
-case 'Yes':
-  $herpesyes = 'selected';
-  break;
-case 'No':
-  $herpesno = 'selected';
-  break;
-default:
-  echo "";
-}
 if($herpeschoose == "Yes")
 {
 	$switching = "visiable";
@@ -877,9 +762,9 @@ else{
 Cold Sores/Herpes while breatfeedng (Y/N)(Dates):&nbsp;&nbsp;
 
 <select name="herpeschoose" id="herpeschoose" onchange="showme('herpeschoose','herpes',1)">
-<option value="N/A" <?php echo $herpesna ?>>Please Select</option>   
-<option value="Yes" <?php echo $herpesyes ?>>Yes</option>
-<option value="No" <?php echo $herpesno ?>>No</option>
+<option value="N/A" <?php if($herpeschoose=="N/A") echo 'selected' ?>>Please Select</option>   
+<option value="Yes" <?php if($herpeschoose=="Yes") echo 'selected' ?>>Yes</option>
+<option value="No" <?php if($herpeschoose=="No") echo 'selected' ?>>No</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 
@@ -943,20 +828,6 @@ echo "</select>\n";
 <p>
 <?php
 
-switch ($ukmoschoose)
-{
-case 'N/A':
-  $ukmosna = 'selected';
-	break;
-case 'Yes':
-  $ukmosyes = 'selected';
-  break;
-case 'No':
-  $ukmosno = 'selected';
-  break;
-default:
-  echo "";
-}
 if($ukmoschoose == "Yes")
 {
 	$switching = "visiable";
@@ -973,9 +844,9 @@ else{
 UK '80-96 3+MOS. (Y/N)(Yrs):&nbsp;&nbsp;
 
 <select name="ukmoschoose" id="ukmoschoose" onchange="showme('ukmoschoose','ukmos',1)">
-<option value="N/A" <?php echo $ukmosna ?>>Please Select</option>   
-<option value="Yes" <?php echo $ukmosyes ?>>Yes</option>
-<option value="No" <?php echo $ukmosno ?>>No</option>
+<option value="N/A" <?php if($ukmoschoose=="N/A") echo 'selected' ?>>Please Select</option>   
+<option value="Yes" <?php if($ukmoschoose=="Yes") echo 'selected' ?>>Yes</option>
+<option value="No" <?php if($ukmoschoose=="No") echo 'selected' ?>>No</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 
@@ -986,20 +857,7 @@ UK '80-96 3+MOS. (Y/N)(Yrs):&nbsp;&nbsp;
 <p>
 <?php
 
-switch ($eurochoose)
-{
-case 'N/A':
-  $eurona = 'selected';
-	break;
-case 'Yes':
-  $euroyes = 'selected';
-  break;
-case 'No':
-  $eurono = 'selected';
-  break;
-default:
-  echo "";
-}
+
 if($eurochoose == "Yes")
 {
 	$switching = "visiable";
@@ -1016,9 +874,9 @@ else{
 Europe '80 5+yrs (Y/N)(Yrs):&nbsp;&nbsp;
 
 <select name="eurochoose" id="eurochoose" onchange="showme('eurochoose','euro',1)">
-<option value="N/A" <?php echo $eurona ?>>Please Select</option>   
-<option value="Yes" <?php echo $euroyes ?>>Yes</option>
-<option value="No" <?php echo $eurono ?>>No</option>
+<option value="N/A" <?php if($eurochoose=="N/A") echo 'selected' ?>>Please Select</option>   
+<option value="Yes" <?php if($eurochoose=="Yes") echo 'selected' ?>>Yes</option>
+<option value="No" <?php if($eurochoose=="No") echo 'selected' ?>>No</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 
@@ -1033,11 +891,11 @@ echo "Special Diet:";
 echo "</br>";
 
 ?>
-<input type="checkbox" name="Reg" value="Reg" <?php if(Reg=="on")echo checked?>> Regular
-<input type="checkbox" name="diet" value="Dfree" <?php echo $dietdfree ?>> Dairy-Free
-<input type="checkbox" name="diet" value="Veg" <?php echo $dietveg ?>> Vegetarian(eggs/dairy)
-<input type="checkbox" name="diet" value="Vegan" <?php echo $dietvegan ?>> Vegan
-<input type="checkbox" name="diet" value="Other" <?php echo $dietother ?>> Other
+<input type="checkbox" name="reg" value="Reg" <?php if($reg=="Reg")echo 'checked' ?>> Regular
+<input type="checkbox" name="dfree" value="Dfree" <?php if($dfree=="Dfree")echo 'checked'?>> Dairy-Free
+<input type="checkbox" name="veg" value="Veg" <?php if($veg=="Veg")echo 'checked' ?>> Vegetarian(eggs/dairy)
+<input type="checkbox" name="vegan" value="Vegan" <?php if($vegan=="Vegan")echo 'checked' ?>> Vegan
+<input type="checkbox" name="others" value="Other" <?php if($others=="Other")echo 'checked' ?>> Other
 
 </p>
 <p>
