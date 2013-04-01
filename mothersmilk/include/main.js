@@ -31,18 +31,7 @@
 		              h.style.display = "inline";
                   h.style.visibility="visible";
 
-                  if(s.selectedIndex ==3||s.selectedIndex ==4)
-                  {
-
-                    
-                        flag.value = "on";
-                       alert(flag.value);
-                  }
-                  else{
-
-                    flag.value = "";
-                    alert(flag.value);
-                  }
+                  
                   
                }
             else

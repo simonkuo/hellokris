@@ -192,7 +192,12 @@ echo "&nbsp;&nbsp;&nbsp;&nbsp;Baby's DOB:&nbsp;&nbsp;&nbsp;";
  
 
 echo "<label class='boldtext'>$bbmm</label>" . "-" . "<label class='boldtext'>$bbdd</label>" . "-" . "<label class='boldtext'>$bbyy</label>" .  "&nbsp;&nbsp;&nbsp;" . "(mm-dd-yyyy)";
+echo "</br>\n";
+echo "</br>\n";
+echo $bbmm;
 
+echo "</br>\n";
+echo "</br>\n";
 
 echo "&nbsp;&nbsp;&nbsp;Baby's Status:&nbsp;&nbsp;" . "<label class='boldtext'>" . $babystatus . "</label>"; 
 

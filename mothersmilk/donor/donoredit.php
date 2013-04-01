@@ -176,10 +176,19 @@ Application Status:&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;
 
 <input type ="text" name="determine" id="determine" style="display:<?php echo $switching2 ?>;position:relative;visibility:<?php echo $switching ?>; " value= "<?php echo $determine ?> " size=20 maxlength=20 placeholder = "mm-dd-yyyy">  
-<input type = "text" id="process" value="<?php echo $process ?>" style = "visibility:hidden"></input>
+
 
 <?php
 
+
+if($determinechoose == "F"|"D")
+{
+  $process ="on";
+}
+else
+{
+  $process ="off";
+}
 
 
 if($organization == "OTH")
