@@ -120,7 +120,6 @@ $ukmoschoose = $row["ukmoschoose"];
 $ukmos = $row["ukmos"];
 $eurochoose = $row["eurochoose"];
 $euro = $row["euro"];
-$diet = $row["diet"];
 $donateamount = $row['donateamount'];
 $reg = $row['reg'];
 $dfree = $row['dfree'];
@@ -312,9 +311,9 @@ echo "Baby's Name:&nbsp; <input type=\"text\" name=\"babysname\" value=\"$babysn
 echo "&nbsp;&nbsp;&nbsp;&nbsp;Baby's DOB:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp";
 ?>
 
-<input type=\"int\" name=\"bbmm\" size="2" maxlength="2" value="<?php echo $bbmm ?>" placeholder = "mm">
-&nbsp;&nbsp;<input type=\"int\" name="bbdd" size="2" maxlength="2" value="<?php echo $bbdd ?>" placeholder = "dd">
-&nbsp;&nbsp;<input type=\"int\" name="bbyy" size="4" maxlength="4" value="<?php echo $bbyy ?>" placeholder = "yyyy">
+<input type="int" name="bbmm" size="2" maxlength="2" value="<?php echo $bbmm ?>" placeholder = "mm">
+&nbsp;&nbsp;<input type="int" name="bbdd" size="2" maxlength="2" value="<?php echo $bbdd ?>" placeholder = "dd">
+&nbsp;&nbsp;<input type="int" name="bbyy" size="4" maxlength="4" value="<?php echo $bbyy ?>" placeholder = "yyyy">
 
 
 

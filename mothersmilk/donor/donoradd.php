@@ -162,9 +162,9 @@ echo "Baby's Name:&nbsp; <input type=\"text\" name=\"babysname\" size=\"25\" max
 echo "&nbsp;&nbsp;&nbsp;&nbsp;Baby's DOB:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp";
 ?>
 
-<input type=\"int\" name=\"bbmm\" size="2" maxlength="2" value="" placeholder = "mm">
-&nbsp;&nbsp;<input type=\"int\" name="bbdd" size="2" maxlength="2" value="" placeholder = "dd">
-&nbsp;&nbsp;<input type=\"int\" name="bbyy" size="4" maxlength="4" value="" placeholder = "yyyy">
+<input type="int" name="bbmm" size="2" maxlength="2" value="" placeholder = "mm">
+&nbsp;&nbsp;<input type="int" name="bbdd" size="2" maxlength="2" value="" placeholder = "dd">
+&nbsp;&nbsp;<input type="int" name="bbyy" size="4" maxlength="4" value="" placeholder = "yyyy">
 
 <?php
 echo "</br>\n";
@@ -396,7 +396,9 @@ UK '80-96 3+MOS. (Y/N)(Yrs):&nbsp;&nbsp;
 
 <?php
 
-echo "</br>"; echo "</br>"; ?>
+echo "</br>"; 
+echo "</br>"; 
+?>
 
 Europe '80 5+yrs (Y/N)(Yrs):&nbsp;&nbsp;
 
@@ -410,20 +412,21 @@ Europe '80 5+yrs (Y/N)(Yrs):&nbsp;&nbsp;
 <input type ="text" name="euro" id="euro" style="display:none;position:relative;visibility:hidden; " value= "" size=20 maxlength=20 placeholder = "years">  
 
 
-<p>
+
 <?php
 
 echo "Special Diet:";
 echo "</br>";
 
 ?>
+
 <input type="checkbox" name="reg" value="Reg" > Regular
 <input type="checkbox" name="dfree" value="Dfree" > Dairy-Free
 <input type="checkbox" name="veg" value="Veg" > Vegetarian(eggs/dairy)
 <input type="checkbox" name="vegan" value="Vegan" > Vegan
 <input type="checkbox" name="others" value="Other" > Other
 
-</p>
+
 <?php
 echo "</br>";
 echo "</br>";
