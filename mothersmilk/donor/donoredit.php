@@ -950,6 +950,7 @@ echo "\n";
 </p>
 <?php
 include 'followupadd.php'; 
+include 'page3.php';
 ?>
 <p>
 <?php
