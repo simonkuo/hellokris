@@ -398,7 +398,9 @@ include 'page3cnfm.php';
         }
 */
 // Update followup data
-update_followup_data($dnum,$followup_data);        
+update_followup_data($dnum,$followup_data);  
+// Update page 3 data
+update_page3($dnum, $page3_data);     
 // Inserting donor into Donor Table Log
 
 // increment transaction number for each edit
@@ -414,7 +416,7 @@ $transactionnumber = $lasttransactionnumber + 1;
    $sql1 = "insert into screenertablelog (donornumber, firstname, lastname, middlename, dnrapdate, address, city, state, zip, country,  homephone, cellphone, email, referral, babysname, babysdob, babystatus, storefrom, milkcommit, herbs, alcohol, transfusion, createdby, transactionnumber, transactiontype, lasteditdate, lastedit, donorpacket, donorcomment, transactiondate, username, organization, donateamount, rxbcdate, smoke, organizationother, rxbcchoose, herbschoose, alcoholchoose, ivDrug, transfusionchoose, workchoose, work, determinechoose, determine, heptest, tattooschoose, tattoos, hivtest, tbtest, tbtreat, herpeschoose, herpes, hemophilia, hormones, ukmoschoose, ukmos, eurochoose, euro, diet, process, reg, dfree, veg, vegan, others) values ($dnum, '$fname', '$lname', '$mname', '$dnrapdate', '$address', '$city', '$state', '$zip', '$country', '$hphone', '$cphone', '$email', '$referral', '$babysname', '$babysdob', '$babystatus', '$storefrom', '$milkcommit', '$herbs', '$alcohol', '$transfusion', '$createdby', $transactionnumber, 'Edited', '$lasteditdate', '$lastedit', '$donorpacket', '$donorcomment', '$lasteditdate', '$lastedit', '$organization', $donateamount, '$rxbcdate', '$smoke', '$organizationother', '$rxbcchoose', '$herbschoose', '$alcoholchoose', '$ivDrug', '$transfusionchoose', '$workchoose', '$work', '$determinechoose', '$determine', '$heptest', '$tattooschoose', '$tattoos', '$hivtest', '$tbtest', '$tbtreat', '$herpeschoose', '$herpes', '$hemophilia', '$hormones', '$ukmoschoose', '$ukmos', '$eurochoose', '$euro', '$diet', '$process', '$reg', '$dfree', '$veg', '$vegan', '$others')";
 	//echo $sql;
 
-/*
+
    $result = mysql_query($sql1, $con); 
 
 
@@ -425,10 +427,11 @@ $transactionnumber = $lasttransactionnumber + 1;
          exit;
        
 	}
-*/	
+
 	
 	//Update followup data in screenertablelog
 	update_followup_data_log($dnum,$transactionnumber,$followup_data); 
+	update_followup_data_log($dnum,$transactionnumber, $page3_data);
    }
 else
    {
