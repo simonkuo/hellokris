@@ -9,6 +9,7 @@ font-size:20px;
 .underline{
 
 	text-decoration:underline;
+	font-weight: bold;
 }
 
 body{
