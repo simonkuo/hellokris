@@ -1,5 +1,141 @@
 <div>
 <p>
+<label>20. Have you had intimate contact or exposure to someone with HIV or AIDS in the last 12 months?</label>
+<select name="q20" id="q20">
+<option value="N/A" <?php if ($row['q20'] == 'N/A') echo "selected";?> >Select</option>
+<option value="yes" <?php if ($row['q20'] == 'yes') echo "selected";?> >yes</option>
+<option value="no" <?php if ($row['q20'] == 'no') echo "selected";?> >no</option>
+</select>
+</p>
+<p>
+<label>21. In the last 12 months have you or your sexual partner(s) had ears or body parts pierced, a tatto, permanent make-up applied with needle, or acupuncture with non-sterile needles?</label>
+<select name="q21" id="q21">
+<option value="N/A" <?php if ($row['q21'] == 'N/A') echo "selected";?> >Select</option>
+<option value="yes" <?php if ($row['q21'] == 'yes') echo "selected";?> >yes</option>
+<option value="no" <?php if ($row['q21'] == 'no') echo "selected";?> >no</option>
+</select>
+</p>
+<p>
+<label>22. Have you had an accidental needle stick, or exposure to someone else's blood in the last  12 months?</label>
+<select name="q22" id="q22">
+<option value="N/A" <?php if ($row['q22'] == 'N/A') echo "selected";?> >Select</option>
+<option value="yes" <?php if ($row['q22'] == 'yes') echo "selected";?> >yes</option>
+<option value="no" <?php if ($row['q22'] == 'no') echo "selected";?> >no</option>
+</select>
+</p>
+<p>
+<label>23. Have you ever had tuberculosis, exposure to TB or positive TB test or chest X-ray?</label>
+<select name="q23" id="q23">
+<option value="N/A" <?php if ($row['q23'] == 'N/A') echo "selected";?> >Select</option>
+<option value="yes" <?php if ($row['q23'] == 'yes') echo "selected";?> >yes</option>
+<option value="no" <?php if ($row['q23'] == 'no') echo "selected";?> >no</option>
+</select>
+</p>
+<p>
+<label>24. Have you ever been treated for TB?</label>
+<select name="q24" id="q24">
+<option value="N/A" <?php if ($row['q24'] == 'N/A') echo "selected";?> >Select</option>
+<option value="yes" <?php if ($row['q24'] == 'yes') echo "selected";?> >yes</option>
+<option value="no" <?php if ($row['q24'] == 'no') echo "selected";?> >no</option>
+</select>
+</p>
+<p>
+<label>25. Do you have anyone in your household currently have a cough that has lasted longer than 3 weeks?</label>
+<select name="q25" id="q25">
+<option value="N/A" <?php if ($row['q25'] == 'N/A') echo "selected";?> >Select</option>
+<option value="yes" <?php if ($row['q25'] == 'yes') echo "selected";?> >yes</option>
+<option value="no" <?php if ($row['q25'] == 'no') echo "selected";?> >no</option>
+</select>
+</p>
+<p>
+<label>26. Have you or anyone in your household been coughing up blood and running a fever?</label>
+<select name="q26" id="q26">
+<option value="N/A" <?php if ($row['q26'] == 'N/A') echo "selected";?> >Select</option>
+<option value="yes" <?php if ($row['q26'] == 'yes') echo "selected";?> >yes</option>
+<option value="no" <?php if ($row['q26'] == 'no') echo "selected";?> >no</option>
+</select>
+</p>
+<p>
+<label>27. Have you ever had heart disease or high blood pressure?</label>
+<select name="q27" id="q27">
+<option value="N/A" <?php if ($row['q27'] == 'N/A') echo "selected";?> >Select</option>
+<option value="yes" <?php if ($row['q27'] == 'yes') echo "selected";?> >yes</option>
+<option value="no" <?php if ($row['q27'] == 'no') echo "selected";?> >no</option>
+</select>
+</p>
+<p>
+<label>28. Do you have insulin-dependent diabetes?</label>
+<select name="q28" id="q28">
+<option value="N/A" <?php if ($row['q28'] == 'N/A') echo "selected";?> >Select</option>
+<option value="yes" <?php if ($row['q28'] == 'yes') echo "selected";?> >yes</option>
+<option value="no" <?php if ($row['q28'] == 'no') echo "selected";?> >no</option>
+</select>
+</p>
+<p>
+<label>29. In the last 12 months have you tested positive for or been treated for syphilis, gonorrhea, or chlamydia?</label>
+<select name="q29" id="q29">
+<option value="N/A" <?php if ($row['q29'] == 'N/A') echo "selected";?> >Select</option>
+<option value="yes" <?php if ($row['q29'] == 'yes') echo "selected";?> >yes</option>
+<option value="no" <?php if ($row['q29'] == 'no') echo "selected";?> >no</option>
+</select>
+</p>
+<p>
+<label>30. Do you have a history of oral (cold sores) or genital herpes?</label>
+<select name="q30" id="q30">
+<option value="N/A" <?php if ($row['q30'] == 'N/A') echo "selected";?> >Select</option>
+<option value="yes" <?php if ($row['q30'] == 'yes') echo "selected";?> >yes</option>
+<option value="no" <?php if ($row['q30'] == 'no') echo "selected";?> >no</option>
+</select>
+</p>
+<p>
+<label>31. Have you ever had a skin disease or unexplain skin lesions?</label>
+<select name="q31" id="q31">
+<option value="N/A" <?php if ($row['q31'] == 'N/A') echo "selected";?> >Select</option>
+<option value="yes" <?php if ($row['q31'] == 'yes') echo "selected";?> >yes</option>
+<option value="no" <?php if ($row['q31'] == 'no') echo "selected";?> >no</option>
+</select>
+</p>
+<p>
+<label>32. In the last 12 months have you had any vaccination, inoculation, or shots?</label>
+<select name="q32" id="q32">
+<option value="N/A" <?php if ($row['q32'] == 'N/A') echo "selected";?> >Select</option>
+<option value="yes" <?php if ($row['q32'] == 'yes') echo "selected";?> >yes</option>
+<option value="no" <?php if ($row['q32'] == 'no') echo "selected";?> >no</option>
+</select>
+</p>
+<p>
+<label>33. Did you have any illness or complication due to the vaccination?</label>
+<select name="q33" id="q33">
+<option value="N/A" <?php if ($row['q33'] == 'N/A') echo "selected";?> >Select</option>
+<option value="yes" <?php if ($row['q33'] == 'yes') echo "selected";?> >yes</option>
+<option value="no" <?php if ($row['q33'] == 'no') echo "selected";?> >no</option>
+</select>
+</p>
+<p>
+<label>34. In the last 8 weeks, have you received the smallpox vaccination, or have you had close contact with the vaccination site of anyone else?</label>
+<select name="q34" id="q34">
+<option value="N/A" <?php if ($row['q34'] == 'N/A') echo "selected";?> >Select</option>
+<option value="yes" <?php if ($row['q34'] == 'yes') echo "selected";?> >yes</option>
+<option value="no" <?php if ($row['q34'] == 'no') echo "selected";?> >no</option>
+</select>
+</p>
+<p>
+<label>35. If you had the smallpox vaccination, has the vacination scab fallen off your skin by itself?</label>
+<select name="q35" id="q35">
+<option value="N/A" <?php if ($row['q35'] == 'N/A') echo "selected";?> >Select</option>
+<option value="yes" <?php if ($row['q35'] == 'yes') echo "selected";?> >yes</option>
+<option value="no" <?php if ($row['q35'] == 'no') echo "selected";?> >no</option>
+</select>
+</p>
+<p>
+<label>36. If you have had close contact with the vaccination site of anyone else, have you had any new skin rashes or sores since the time of contact?</label>
+<select name="q35" id="q35">
+<option value="N/A" <?php if ($row['q36'] == 'N/A') echo "selected";?> >Select</option>
+<option value="yes" <?php if ($row['q36'] == 'yes') echo "selected";?> >yes</option>
+<option value="no" <?php if ($row['q36'] == 'no') echo "selected";?> >no</option>
+</select>
+</p>
+<p>
 <label>37. In the last 12 months have you had injections for exposure to rabies or received any experimental vaccine?</label>
 <select name="q37" id="q37">
 <option value="N/A" <?php if ($row['q37'] == 'N/A') echo "selected";?> >Select</option>

@@ -1,4 +1,72 @@
 <p>
+<label>20. Have you had intimate contact or exposure to someone with HIV or AIDS in the last 12 months?</label>
+<span><?php echo $row['q20']?> </span>
+</p>
+<p>
+<label>21. In the last 12 months have you or your sexual partner(s) had ears or body parts pierced, a tatto, permanent make-up applied with needle, or acupuncture with non-sterile needles?</label>
+<span><?php echo $row['q21']?> </span>
+</p>
+<p>
+<label>22. Have you had an accidental needle stick, or exposure to someone else's blood in the last  12 months?</label>
+<span><?php echo $row['q22']?> </span>
+</p>
+<p>
+<label>23. Have you ever had tuberculosis, exposure to TB or positive TB test or chest X-ray?</label>
+<span><?php echo $row['q23']?> </span>
+</p>
+<p>
+<label>24. Have you ever been treated for TB?</label>
+<span><?php echo $row['q24']?> </span>
+</p>
+<p>
+<label>25. Do you have anyone in your household currently have a cough that has lasted longer than 3 weeks?</label>
+<span><?php echo $row['q25']?> </span>
+</p>
+<p>
+<label>26. Have you or anyone in your household been coughing up blood and running a fever?</label>
+<span><?php echo $row['q26']?> </span>
+</p>
+<p>
+<label>27. Have you ever had heart disease or high blood pressure?</label>
+<span><?php echo $row['q27']?> </span>
+</p>
+<p>
+<label>28. Do you have insulin-dependent diabetes?</label>
+<span><?php echo $row['q28']?> </span>
+</p>
+<p>
+<label>29. In the last 12 months have you tested positive for or been treated for syphilis, gonorrhea, or chlamydia?</label>
+<span><?php echo $row['q29']?> </span>
+</p>
+<p>
+<label>30. Do you have a history of oral (cold sores) or genital herpes?</label>
+<span><?php echo $row['q30']?> </span>
+</p>
+<p>
+<label>31. Have you ever had a skin disease or unexplain skin lesions?</label>
+<span><?php echo $row['q31']?> </span>
+</p>
+<p>
+<label>32. In the last 12 months have you had any vaccination, inoculation, or shots?</label>
+<span><?php echo $row['q32']?> </span>
+</p>
+<p>
+<label>33. Did you have any illness or complication due to the vaccination?</label>
+<span><?php echo $row['q33']?> </span>
+</p>
+<p>
+<label>34. In the last 8 weeks, have you received the smallpox vaccination, or have you had close contact with the vaccination site of anyone else?</label>
+<span><?php echo $row['q34']?> </span>
+</p>
+<p>
+<label>35. If you had the smallpox vaccination, has the vacination scab fallen off your skin by itself?</label>
+<span><?php echo $row['q35']?> </span>
+</p>
+<p>
+<label>36. If you have had close contact with the vaccination site of anyone else, have you had any new skin rashes or sores since the time of contact?</label>
+<span><?php echo $row['q36']?> </span>
+</p>
+<p>
 <label>37. In the last 12 months have you had injections for exposure to rabies or received any experimental vaccine?</label>
 <span><?php echo $row['q37']?> </span>
 </p>
