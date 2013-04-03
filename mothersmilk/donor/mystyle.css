@@ -6,6 +6,10 @@ font-size:20px;
 
 
 }
+.underline{
+
+	text-decoration:underline;
+}
 
 body{
 	background-color: #FFD700;

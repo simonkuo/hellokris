@@ -35,6 +35,24 @@ function update_followup_data($donor_number,$update_data){
          exit;
         }
 }
+function update_page1($donor_number,$update_data){
+	$update = array();
+	
+	foreach ($update_data as $field=>$data)
+	{
+		$update[] = '`' . $field . '` = \'' . $data . '\'';
+	}
+	
+
+	$update_page3 = mysql_query("UPDATE `screenertable` SET " . implode(', ', $update) . " WHERE `donornumber` = " . $donor_number);
+	//echo "UPDATE `screenertable` SET " . implode(', ', $update) . " WHERE `donornumber` = " . $donor_number ;
+	if (!$update_page3) 
+        {
+         echo "DB Error, could not update the database for page3 data\n";
+         echo 'MySQL Error: ' . mysql_error();
+         exit;
+        }
+}
 function update_page3($donor_number,$update_data){
 	$update = array();
 	

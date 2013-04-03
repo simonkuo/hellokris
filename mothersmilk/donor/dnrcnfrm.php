@@ -383,7 +383,9 @@ if ($ctype==1)
 
 
 include 'followupcnfrm.php'; 
+include 'page1cnfm.php';
 include 'page3cnfm.php';
+
      $sql = "UPDATE screenertable SET firstname='$fname', lastname='$lname', middlename='$mname', address='$address', city='$city', state='$state', zip='$zip', country='$country', homephone='$hphone', cellphone='$cphone', email='$email', referral='$referral', babysname='$babysname', babysdob='$babysdob', babystatus='$babystatus', storefrom='$storefrom', milkcommit='$milkcommit', herbs='$herbs', alcohol='$alcohol', transfusion='$transfusion', lastedit='$lastedit', lasteditdate='$lasteditdate', donorpacket='$donorpacket', donorcomment='$donorcomment', organization = '$organization', donateamount = $donateamount, rxbcdate = '$rxbcdate', smoke = '$smoke', organizationother='$organizationother', rxbcchoose = '$rxbcchoose', herbschoose = '$herbschoose', alcoholchoose = '$alcoholchoose', ivDrug = '$ivDrug', transfusionchoose = '$transfusionchoose', workchoose = '$workchoose', work = '$work', determinechoose = '$determinechoose', determine = '$determine', heptest = '$heptest', tattooschoose = '$tattooschoose', tattoos = '$tattoos', hivtest = '$hivtest', tbtest = '$tbtest', tbtreat = '$tbtreat', herpeschoose = '$herpeschoose', herpes = '$herpes', hemophilia = '$hemophilia', hormones = '$hormones', ukmoschoose = '$ukmoschoose', ukmos = '$ukmos', eurochoose = '$eurochoose', euro = '$euro', diet = '$diet', process = '$process', reg = '$reg', dfree = '$dfree', veg = '$veg', vegan = '$vegan', others = '$others'  WHERE donornumber = '$dnum'";
 
    $result = mysql_query($sql, $con);
@@ -398,6 +400,8 @@ include 'page3cnfm.php';
 
 // Update followup data
 update_followup_data($dnum,$followup_data);  
+// Update page 1 data
+update_page1($dnum, $page1_data);
 // Update page 3 data
 update_page3($dnum, $page3_data);     
 // Inserting donor into Donor Table Log
@@ -430,6 +434,7 @@ $transactionnumber = $lasttransactionnumber + 1;
 	
 	//Update followup data in screenertablelog
 	update_followup_data_log($dnum,$transactionnumber,$followup_data); 
+  update_followup_data_log($dnum,$transactionnumber, $page1_data);
 	update_followup_data_log($dnum,$transactionnumber, $page3_data);
    }
 else
