@@ -1,3 +1,5 @@
+
+<h2>Donor's Medical History</h2>
 <p>
 <label>1. Have you taken Soriatane(acitretin), and /or Tegison(etretinate) in the last 3 years?</label>
 <span><?php echo $row['q1']?> </span>

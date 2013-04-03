@@ -1,4 +1,4 @@
-<h1> Follow up </h1>
+<h2> Follow up </h2>
 <?php
 	echo "<div><label>Donor Packet:</label>"; 
 if ($row['donorpacketbymail'] != '')

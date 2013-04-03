@@ -1,5 +1,5 @@
 
-<h1> Follow up </h1>
+<h2> Follow up </h2>
 <div>
 <label>Donor Packet:</label> 
 <input type="checkbox" name="donorpacketbymail" <?php if ($row['donorpacketbymail'] != '') echo "checked"; ?> >Mail
