@@ -899,7 +899,7 @@ echo "</br>";
 
 ?>
 <input type="checkbox" name="reg" value="Reg" <?php if($reg=="Reg")echo 'checked' ?>> Regular
-<input type="checkbox" name="dfree" value="Dfree" <?php if($dfree=="Dfree")echo 'checked'?>> Dairy-Free
+<input type="checkbox" name="dfree" value="dfree" <?php if($dfree=="dfree")echo 'checked'?>> Dairy-Free
 <input type="checkbox" name="veg" value="Veg" <?php if($veg=="Veg")echo 'checked' ?>> Vegetarian(eggs/dairy)
 <input type="checkbox" name="vegan" value="Vegan" <?php if($vegan=="Vegan")echo 'checked' ?>> Vegan
 <input type="checkbox" name="others" value="Other" <?php if($others=="Other")echo 'checked' ?>> Other
