@@ -129,7 +129,7 @@
 </p>
 <p>
 <label>36. If you have had close contact with the vaccination site of anyone else, have you had any new skin rashes or sores since the time of contact?</label>
-<select name="q35" id="q35">
+<select name="q36" id="q36">
 <option value="N/A" <?php if ($row['q36'] == 'N/A') echo "selected";?> >Select</option>
 <option value="yes" <?php if ($row['q36'] == 'yes') echo "selected";?> >yes</option>
 <option value="no" <?php if ($row['q36'] == 'no') echo "selected";?> >no</option>

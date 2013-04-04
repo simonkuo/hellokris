@@ -68,7 +68,7 @@ if (!mysql_select_db('milk_db', $con))
 $determinechoose = $_POST['determinechoose'];
 $determine = $_POST['determine'];
 
-$process = $_POST['process'];
+
 $organization = $_POST["organization"];
 $organizationother = $_POST["organizationother"];
 
@@ -96,9 +96,7 @@ $babysdob = $_POST["babysdob"];
 $bbmm = $_POST["bbmm"];
 $bbdd = $_POST["bbdd"];
 $bbyy = $_POST["bbyy"];
-echo $bbmm;
-echo $bbdd;
-echo $bbyy;
+
 
 $babystatus = $_POST["babystatus"];
 $donateamount = $_POST["donateamount"];
@@ -385,6 +383,19 @@ if ($ctype==1)
 include 'followupcnfrm.php'; 
 include 'page1cnfm.php';
 include 'page3cnfm.php';
+
+
+if($determinechoose == "F" || $determinechoose == "D")
+{
+  $process ="on";
+  
+}
+else
+{
+  
+  $process ="off";
+  
+} 
 
      $sql = "UPDATE screenertable SET firstname='$fname', lastname='$lname', middlename='$mname', address='$address', city='$city', state='$state', zip='$zip', country='$country', homephone='$hphone', cellphone='$cphone', email='$email', referral='$referral', babysname='$babysname', babysdob='$babysdob', babystatus='$babystatus', storefrom='$storefrom', milkcommit='$milkcommit', herbs='$herbs', alcohol='$alcohol', transfusion='$transfusion', lastedit='$lastedit', lasteditdate='$lasteditdate', donorpacket='$donorpacket', donorcomment='$donorcomment', organization = '$organization', donateamount = $donateamount, rxbcdate = '$rxbcdate', smoke = '$smoke', organizationother='$organizationother', rxbcchoose = '$rxbcchoose', herbschoose = '$herbschoose', alcoholchoose = '$alcoholchoose', ivDrug = '$ivDrug', transfusionchoose = '$transfusionchoose', workchoose = '$workchoose', work = '$work', determinechoose = '$determinechoose', determine = '$determine', heptest = '$heptest', tattooschoose = '$tattooschoose', tattoos = '$tattoos', hivtest = '$hivtest', tbtest = '$tbtest', tbtreat = '$tbtreat', herpeschoose = '$herpeschoose', herpes = '$herpes', hemophilia = '$hemophilia', hormones = '$hormones', ukmoschoose = '$ukmoschoose', ukmos = '$ukmos', eurochoose = '$eurochoose', euro = '$euro', diet = '$diet', process = '$process', reg = '$reg', dfree = '$dfree', veg = '$veg', vegan = '$vegan', others = '$others'  WHERE donornumber = '$dnum'";
 
