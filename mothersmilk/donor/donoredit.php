@@ -59,7 +59,6 @@ $row = mysql_fetch_assoc($result);
 //Print_r ($_SESSION);
 $determinechoose = $row['determinechoose'];
 $determine = $row['determine'];
-$process = $row['process'];
 $organization = $row['organization'];
 $organizationother = $row['organizationother']; 
 $fname = $row['firstname'];
@@ -950,6 +949,11 @@ echo "\n";
 </p>
 <?php
 include 'followupadd.php';
+?>
+
+
+
+<?php
 include 'page1.php'; 
 include 'page3.php';
 ?>

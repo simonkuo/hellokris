@@ -68,13 +68,13 @@ echo "</br>\n";
 Application Status:&nbsp;&nbsp;&nbsp;
 
 <select name="determinechoose" id="determinechoose" onchange="showme2('determinechoose','determine')">  
-<option value="N/A" <?php echo $dna ?>>Please Select</option>   
-<option value="A" <?php echo $dA ?>>Applied or Awaiting</option>
-<option value="P" <?php echo $dP ?>>Passed Phone Screen</option>
-<option value="NP" <?php echo $dNP ?>>No Passed Phone Screen</option>
-<option value="F" <?php echo $dF ?>>Failed</option>
-<option value="D" <?php echo $dD ?>>Donor Accepted</option>
-<option value="C" <?php echo $dC ?>>Closed</option>
+<option value="N/A" >Please Select</option>   
+<option value="A" >Applied or Awaiting</option>
+<option value="P" >Passed Phone Screen</option>
+<option value="NP" >No Passed Phone Screen</option>
+<option value="F" >Failed</option>
+<option value="D" >Donor Accepted</option>
+<option value="C" >Closed</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 
@@ -101,10 +101,11 @@ echo "</br>\n";
 Organization:&nbsp;&nbsp;&nbsp;
 
 <select name="organization" id="organization" onchange="showme('organization','organizationother',3)">  
-<option value="IND" <?php echo $ind ?>>Individual</option>
-<option value="STN" <?php echo $stn ?>>Stanford</option>  
-<option value="JHH" <?php echo $jhh ?>>John Hopkns</option>
-<option value="OTH" <?php echo $oth ?>>Other</option>
+<option value="N/A" >Please Select</option>";
+<option value="IND" >Individual</option>
+<option value="STN" >Stanford</option>  
+<option value="JHH" >John Hopkns</option>
+<option value="OTH" >Other</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 <input type ="text" name="organizationother" id="organizationother" style="display:none;position:relative;visibility:hidden;" value="" size=20 maxlength=20>  
@@ -146,6 +147,7 @@ echo "</br>\n";
 echo "</br>\n";
 echo " Referred By:&nbsp;&nbsp;";
 echo "<select name=\"referral\">\n";
+echo "<option value=\"N/A\" >Please Select</option>";
 echo "<option value=\"internet\">Internet</option>\n";
 echo "<option value=\"previous\">Previous Donor</option>\n";
 echo "<option value=\"surrogate\">Surrogate</option>\n";
@@ -171,6 +173,7 @@ echo "</br>\n";
 echo "</br>\n";
 echo "Baby Status:&nbsp;&nbsp;";
 echo "<select name=\"babystatus\">\n";
+echo "<option value=\"N/A\" >Please Select</option>";
 echo "<option value=\"Preterm\">Preterm (<36 wks)</option>\n";
 echo "<option value=\"In hospital\">In Hospital</option>\n";
 echo "<option value=\"Bereaved\">Bereaved</option>\n";
@@ -185,6 +188,7 @@ echo "</br>";
 echo "</br>";
 echo "Stored from:&nbsp;&nbsp;";
 echo "<select name=\"storefrom\">\n";
+echo "<option value=\"N/A\" >Please Select</option>";
 echo "<option value=\"deepfreeze\">Deep Freeze</option>\n";
 echo "<option value=\"milkhome\">Milk at Home</option>\n";
 echo "<option value=\"hospital\">Hospital</option>\n";
@@ -192,6 +196,7 @@ echo "</select>\n";
 
 echo "&nbsp;&nbsp;&nbsp;Can commit to 100 oz:&nbsp;&nbsp;";
 echo "<select name=\"milkcommit\">\n";
+echo "<option value=\"N/A\" >Please Select</option>";
 echo "<option value=\"yes\">Yes</option>\n";
 echo "<option value=\"no\">No</option>\n";
 echo "</select>\n";
@@ -201,9 +206,9 @@ echo "</br>";
 RX/BC Pll/OTC Use (Y/N)(Dates):&nbsp;&nbsp;&nbsp;
 
 <select name="rxbcchoose" id="rxbcchoose" onchange="showme('rxbcchoose','rxbcdate',1)">
-<option value="N/A" <?php echo $rxna ?>>Please Select</option>   
-<option value="Yes" <?php echo $rxyes ?>>Yes</option>
-<option value="No" <?php echo $rxno ?>>No</option>
+<option value="N/A" >Please Select</option>   
+<option value="Yes" >Yes</option>
+<option value="No" >No</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 
@@ -216,9 +221,9 @@ echo "</br>";
 Supplements w/Herbs/Herb Teas (Y/N)(Dates):&nbsp;&nbsp;
 
 <select name="herbschoose" id="herbschoose" onchange="showme('herbschoose','herbs',1)">
-<option value="N/A" <?php echo $herbna ?>>Please Select</option>   
-<option value="Yes" <?php echo $herbyes ?>>Yes</option>
-<option value="No" <?php echo $herbno ?>>No</option>
+<option value="N/A" >Please Select</option>   
+<option value="Yes" >Yes</option>
+<option value="No" >No</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 
@@ -230,9 +235,9 @@ echo "</br>\n";
 ?>
 Alcohol while pumping (Y/N)(Dates):&nbsp;&nbsp;
 <select name="alcoholchoose" id="alcoholchoose" onchange="showme('alcoholchoose','alcohol',1)">
-<option value="N/A" <?php echo $alcoholna ?>>Please Select</option>   
-<option value="Yes" <?php echo $alcoholyes ?>>Yes</option>
-<option value="No" <?php echo $alcoholno ?>>No</option>
+<option value="N/A" >Please Select</option>   
+<option value="Yes" >Yes</option>
+<option value="No" >No</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 
@@ -261,9 +266,9 @@ echo "</br>";
 ?>
 Transfusion (Y/N)(Dates):&nbsp;&nbsp;
 <select name="transfusionchoose" id="transfusionchoose" onchange="showme('transfusionchoose','transfusion',1)">
-<option value="N/A" <?php echo $transfusionna ?>>Please Select</option>   
-<option value="Yes" <?php echo $transfusionyes ?>>Yes</option>
-<option value="No" <?php echo $transfusionno ?>>No</option>
+<option value="N/A" >Please Select</option>   
+<option value="Yes" >Yes</option>
+<option value="No" >No</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 
@@ -277,9 +282,9 @@ echo "</br>";
 Work Hi-Risk/Blood (Y/N)(Dates):&nbsp;&nbsp;
 
 <select name="workchoose" id="workchoose" onchange="showme('workchoose','work',1)">
-<option value="N/A" <?php echo $workna ?>>Please Select</option>   
-<option value="Yes" <?php echo $workyes ?>>Yes</option>
-<option value="No" <?php echo $workno ?>>No</option>
+<option value="N/A" >Please Select</option>   
+<option value="Yes" >Yes</option>
+<option value="No" >No</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 
@@ -293,9 +298,9 @@ echo "</br>";
 Tattoos/Piercing (Y/N)(Dates):&nbsp;&nbsp;
 
 <select name="tattooschoose" id="tattooschoose" onchange="showme('tattooschoose','tattoos',1)">
-<option value="N/A" <?php echo $tattoosna ?>>Please Select</option>   
-<option value="Yes" <?php echo $tattoosyes ?>>Yes</option>
-<option value="No" <?php echo $tattoosno ?>>No</option>
+<option value="N/A" >Please Select</option>   
+<option value="Yes" >Yes</option>
+<option value="No" >No</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 
@@ -351,9 +356,9 @@ echo "</br>";
 Cold Sores/Herpes while breatfeedng (Y/N)(Dates):&nbsp;&nbsp;
 
 <select name="herpeschoose" id="herpeschoose" onchange="showme('herpeschoose','herpes',1)">
-<option value="N/A" <?php echo $herpesna ?>>Please Select</option>   
-<option value="Yes" <?php echo $herpesyes ?>>Yes</option>
-<option value="No" <?php echo $herpesno ?>>No</option>
+<option value="N/A" >Please Select</option>   
+<option value="Yes" >Yes</option>
+<option value="No" >No</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 
@@ -386,9 +391,9 @@ echo "</br>";
 UK '80-96 3+MOS. (Y/N)(Yrs):&nbsp;&nbsp;
 
 <select name="ukmoschoose" id="ukmoschoose" onchange="showme('ukmoschoose','ukmos',1)">
-<option value="N/A" <?php echo $ukmosna ?>>Please Select</option>   
-<option value="Yes" <?php echo $ukmosyes ?>>Yes</option>
-<option value="No" <?php echo $ukmosno ?>>No</option>
+<option value="N/A" >Please Select</option>   
+<option value="Yes" >Yes</option>
+<option value="No" >No</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 
@@ -403,9 +408,9 @@ echo "</br>";
 Europe '80 5+yrs (Y/N)(Yrs):&nbsp;&nbsp;
 
 <select name="eurochoose" id="eurochoose" onchange="showme('eurochoose','euro',1)">
-<option value="N/A" <?php echo $eurona ?>>Please Select</option>   
-<option value="Yes" <?php echo $euroyes ?>>Yes</option>
-<option value="No" <?php echo $eurono ?>>No</option>
+<option value="N/A" >Please Select</option>   
+<option value="Yes" >Yes</option>
+<option value="No" >No</option>
 </select>
 &nbsp;&nbsp;&nbsp;
 
