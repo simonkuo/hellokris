@@ -467,7 +467,7 @@ else
    $sql = "insert into screenertable (donornumber, firstname, lastname, middlename, dnrapdate, address, city, state, zip, country,  homephone, cellphone, email, referral, babysname, babysdob, babystatus, storefrom, milkcommit, herbs, alcohol, transfusion, createdby, donorpacket, donorcomment, organization, donateamount, rxbcdate, smoke, organizationother, rxbcchoose, herbschoose, alcoholchoose, ivDrug, transfusionchoose, workchoose, work, determinechoose, determine, heptest, tattooschoose, tattoos, hivtest, tbtest, tbtreat, herpeschoose, herpes, hemophilia, hormones, ukmoschoose, ukmos, eurochoose, euro, reg, dfree, veg, vegan, others) values ($dnum, '$fname', '$lname', '$mname', '$dnrapdate', '$address', '$city', '$state', '$zip', '$country', '$hphone', '$cphone', '$email', '$referral', '$babysname', '$babysdob', '$babystatus', '$storefrom', '$milkcommit', '$herbs', '$alcohol', '$transfusion', '$createdby', '$donorpacket', '$donorcomment', '$organization', $donateamount, '$rxbcdate', '$smoke', '$organizationother', '$rxbcchoose', '$herbschoose', '$alcoholchoose', '$ivDrug', '$transfusionchoose', '$workchoose', '$work', '$determinechoose', '$determine', '$heptest', '$tattooschoose', '$tattoos', '$hivtest', '$tbtest', '$tbtreat', '$herpeschoose', '$herpes', '$hemophilia', '$hormones', '$ukmoschoose', '$ukmos', '$eurochoose', '$euro', '$reg', '$dfree', '$veg', '$vegan', '$others')";
 
 
-
+	echo $sql;
    $result = mysql_query($sql, $con); 
 
 
@@ -486,7 +486,7 @@ else
 
    $result = mysql_query($sql1, $con); 
 
-
+	/*
    if (!$result) 
         {
          echo "DB Error, could not query the database\n";
@@ -495,9 +495,9 @@ else
         }
 
 
-
+*/
    }
- 
+
    //Update followup data in screenertablelog
   //update_followup_data_log($transactionnumber,$followup_data); 
 
