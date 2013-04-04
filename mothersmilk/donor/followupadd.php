@@ -2,9 +2,9 @@
 <h2> Follow up </h2>
 <div>
 <label>Donor Packet:</label> 
-<input type="checkbox" name="donorpacketbymail" <?php if ($row['donorpacketbymail'] != '') echo "checked"; ?> >Mail
-<input type="checkbox" name="donorpacketbyemail" <?php if ($row['donorpacketbyemail'] != '') echo "checked"; ?> >Email
-<input type="checkbox" name="donorpacketbyfax" <?php if ($row['donorpacketbyfax'] != '') echo "checked"; ?>>Fax
+<input type="checkbox" name="donorpacketby[]" value = "mail" <?php if ($row['donorpacketbymail'] != '') echo "checked"; ?> >Mail
+<input type="checkbox" name="donorpacketby[]" value = "email"<?php if ($row['donorpacketbyemail'] != '') echo "checked"; ?> >Email
+<input type="checkbox" name="donorpacketby[]" value = "fax" <?php if ($row['donorpacketbyfax'] != '') echo "checked"; ?>>Fax
 
 <label>Date sent:</label>
 <input type = "text" name="datesentpacket" id="datesentpacket" placeholder="mm-dd-yyyy" value = <?=$row['datesentpacket']?> >

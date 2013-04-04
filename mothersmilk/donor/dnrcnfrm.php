@@ -68,7 +68,7 @@ if (!mysql_select_db('milk_db', $con))
 $determinechoose = $_POST['determinechoose'];
 $determine = $_POST['determine'];
 
-$process = $_POST['process'];
+
 $organization = $_POST["organization"];
 $organizationother = $_POST["organizationother"];
 
@@ -96,6 +96,7 @@ $babysdob = $_POST["babysdob"];
 $bbmm = $_POST["bbmm"];
 $bbdd = $_POST["bbdd"];
 $bbyy = $_POST["bbyy"];
+
 
 $babystatus = $_POST["babystatus"];
 $donateamount = $_POST["donateamount"];
@@ -383,6 +384,19 @@ include 'followupcnfrm.php';
 include 'page1cnfm.php';
 include 'page3cnfm.php';
 
+
+if($determinechoose == "F" || $determinechoose == "D")
+{
+  $process ="on";
+  
+}
+else
+{
+  
+  $process ="off";
+  
+} 
+
      $sql = "UPDATE screenertable SET firstname='$fname', lastname='$lname', middlename='$mname', address='$address', city='$city', state='$state', zip='$zip', country='$country', homephone='$hphone', cellphone='$cphone', email='$email', referral='$referral', babysname='$babysname', babysdob='$babysdob', babystatus='$babystatus', storefrom='$storefrom', milkcommit='$milkcommit', herbs='$herbs', alcohol='$alcohol', transfusion='$transfusion', lastedit='$lastedit', lasteditdate='$lasteditdate', donorpacket='$donorpacket', donorcomment='$donorcomment', organization = '$organization', donateamount = $donateamount, rxbcdate = '$rxbcdate', smoke = '$smoke', organizationother='$organizationother', rxbcchoose = '$rxbcchoose', herbschoose = '$herbschoose', alcoholchoose = '$alcoholchoose', ivDrug = '$ivDrug', transfusionchoose = '$transfusionchoose', workchoose = '$workchoose', work = '$work', determinechoose = '$determinechoose', determine = '$determine', heptest = '$heptest', tattooschoose = '$tattooschoose', tattoos = '$tattoos', hivtest = '$hivtest', tbtest = '$tbtest', tbtreat = '$tbtreat', herpeschoose = '$herpeschoose', herpes = '$herpes', hemophilia = '$hemophilia', hormones = '$hormones', ukmoschoose = '$ukmoschoose', ukmos = '$ukmos', eurochoose = '$eurochoose', euro = '$euro', diet = '$diet', process = '$process', reg = '$reg', dfree = '$dfree', veg = '$veg', vegan = '$vegan', others = '$others'  WHERE donornumber = '$dnum'";
 
    $result = mysql_query($sql, $con);
@@ -453,7 +467,7 @@ else
    $sql = "insert into screenertable (donornumber, firstname, lastname, middlename, dnrapdate, address, city, state, zip, country,  homephone, cellphone, email, referral, babysname, babysdob, babystatus, storefrom, milkcommit, herbs, alcohol, transfusion, createdby, donorpacket, donorcomment, organization, donateamount, rxbcdate, smoke, organizationother, rxbcchoose, herbschoose, alcoholchoose, ivDrug, transfusionchoose, workchoose, work, determinechoose, determine, heptest, tattooschoose, tattoos, hivtest, tbtest, tbtreat, herpeschoose, herpes, hemophilia, hormones, ukmoschoose, ukmos, eurochoose, euro, reg, dfree, veg, vegan, others) values ($dnum, '$fname', '$lname', '$mname', '$dnrapdate', '$address', '$city', '$state', '$zip', '$country', '$hphone', '$cphone', '$email', '$referral', '$babysname', '$babysdob', '$babystatus', '$storefrom', '$milkcommit', '$herbs', '$alcohol', '$transfusion', '$createdby', '$donorpacket', '$donorcomment', '$organization', $donateamount, '$rxbcdate', '$smoke', '$organizationother', '$rxbcchoose', '$herbschoose', '$alcoholchoose', '$ivDrug', '$transfusionchoose', '$workchoose', '$work', '$determinechoose', '$determine', '$heptest', '$tattooschoose', '$tattoos', '$hivtest', '$tbtest', '$tbtreat', '$herpeschoose', '$herpes', '$hemophilia', '$hormones', '$ukmoschoose', '$ukmos', '$eurochoose', '$euro', '$reg', '$dfree', '$veg', '$vegan', '$others')";
 
 
-
+	echo $sql;
    $result = mysql_query($sql, $con); 
 
 
@@ -472,7 +486,7 @@ else
 
    $result = mysql_query($sql1, $con); 
 
-
+	/*
    if (!$result) 
         {
          echo "DB Error, could not query the database\n";
@@ -481,9 +495,9 @@ else
         }
 
 
-
+*/
    }
- 
+
    //Update followup data in screenertablelog
   //update_followup_data_log($transactionnumber,$followup_data); 
 

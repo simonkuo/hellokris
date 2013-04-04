@@ -11,10 +11,25 @@ include 'function.php';
 // echo "<br>";
 echo "<h1>Follow up</h1>";
 
+$donorpacketbymail = "";
+$donorpacketbyemail = "";
+$donorpacketbyfax = "";
+if (IsChecked('donorpacketby','mail'))
+{
+	$donorpacketbymail = 'on';
+}
+if (IsChecked('donorpacketby','email'))
+{
+	$donorpacketbyemail = 'on';
+}
+if (IsChecked('donorpacketby','fax'))
+{
+	$donorpacketbyfax = 'on';
+}
 $followup_data = array (
-			'donorpacketbymail'   => $_POST['donorpacketbymail'],
-			'donorpacketbyemail'   => $_POST['donorpacketbyemail'],
-			'donorpacketbyfax'   => $_POST['donorpacketbyfax'],
+			'donorpacketbymail'   => $donorpacketbymail,
+			'donorpacketbyemail'   => $donorpacketbyemail,
+			'donorpacketbyfax'   => $donorpacketbyfax,
 			'datesentpacket'   => $_POST['datesentpacket'],
 			'staffinitdatesentpacket' => $_POST['staffinitdatesentpacket'],
 			'datereceivedpacket'  => $_POST['datereceivedpacket'],
