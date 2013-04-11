@@ -18,13 +18,14 @@ session_start();
 <?php include '../mystyle.php'; ?>
 
 
-
 </HEAD>
 <BODY LANG="en-US" DIR="LTR">
 <P>
 
 
 <P><a href="./donorsearch.php">Screener Search</a></P>
+<br>
+<P><a href="./donoradd.php">Add Donor</a></P>
 <br>
 <P><a href="../dbenter.php">Main Menu</a></P>
 <br>

@@ -23,6 +23,8 @@ session_start();
 
 
 <?php
+include 'function.php'; 
+
 echo "<p><label class='boldtext'><font size=5>Donor Screening</font></label></p>\n";
 // Updated 1/18/2013
 
@@ -75,7 +77,7 @@ $organizationother = $_POST["organizationother"];
 $fname = $_POST["donorfname"];
 $mname = $_POST["donormname"];
 $lname = $_POST["donorlname"];
-$dfree = $_POST["dfree"];
+
 $donorstat = $_POST["donorstat"];
 $address = $_POST["address"];
 $city = $_POST["city"];
@@ -130,11 +132,39 @@ $eurochoose = $_POST["eurochoose"];
 $euro = $_POST["euro"];
 $donorpacket = $_POST["donorpacket"];
 $donorcomment = $_POST["donorcomment"];
-$reg = $_POST['reg'];
-$dfree =$_POST['dfree'];
-$veg = $_POST['veg'];
-$vegan = $_POST['vegan'];
-$others = $_POST['others'];
+$reg = "";
+$dfree = "";
+$veg = "";
+$vegan = "";
+$others = "";
+if (IsChecked('diet','Reg'))
+{
+  $reg = 'on';
+}
+if (IsChecked('diet','Dfree'))
+{
+  $dfree = 'on';
+}
+if (IsChecked('diet','Veg'))
+{
+  $veg = 'on';
+}
+if (IsChecked('diet','Vegan'))
+{
+  $vegan = 'on';
+}
+if (IsChecked('diet','Others'))
+{
+  $others = 'on';
+}
+
+$createdby="";
+if(isset($_SESSION['uname']))
+{
+ $createdby = $_SESSION['uname'];
+
+}
+
 
 echo "</br>";
 echo "Donor number:&nbsp;&nbsp;" . "<label class='boldtext'>" . $dnum . "</label>"; 
@@ -144,7 +174,7 @@ echo "</br>";
 echo "Application Status:&nbsp;&nbsp;" . "<label class='boldtext'>" . $determinechoose . "</label>";  
  if ($determinechoose == "A"|"P"|"NP"|"F") 
         {
-            echo "&nbsp;&nbsp;&nbsp;Date:&nbsp;&nbsp;" . "<label class='boldtext'>" . $determine . "</label>". $process; 
+            echo "&nbsp;&nbsp;&nbsp;Date:&nbsp;&nbsp;" . "<label class='boldtext'>" . $determine . "</label>"; 
         }
 
 echo "</br>";
@@ -308,16 +338,16 @@ echo "</br>";
 echo "</br>";
 
 echo "Special Diet: &nbsp;&nbsp;";   
-if ($reg=="Reg")     {     echo "&nbsp;&nbsp;&nbsp;" . "<label class='boldtext'>" . $reg . "</label>";     }     
-if ($dfree=="Dfree")     {        echo
-"&nbsp;&nbsp;&nbsp;" . "<label class='boldtext'>" . $dfree . "</label>";     }     
-if ($veg=="Veg")
-{        echo "&nbsp;&nbsp;&nbsp;" . "<label class='boldtext'>" . $veg . "</label>";}      
+if ($reg=="on")     {     echo "&nbsp;&nbsp;&nbsp;" . "<label class='boldtext'>" . "Reg" . "</label>";     }     
+if ($dfree=="on")     {        echo
+"&nbsp;&nbsp;&nbsp;" . "<label class='boldtext'>" . "Dfree" . "</label>";     }     
+if ($veg=="on")
+{        echo "&nbsp;&nbsp;&nbsp;" . "<label class='boldtext'>" . "Veg". "</label>";}      
 if
-($vegan=="Vegan")     {        echo "&nbsp;&nbsp;&nbsp;" . "<label class='boldtext'>" . $vegan .
+($vegan=="on")     {        echo "&nbsp;&nbsp;&nbsp;" . "<label class='boldtext'>" . "Vegan" .
 "</label>";     }     
-if ($others=="Other")     {        echo "&nbsp;&nbsp;&nbsp;" . "<label
-class='boldtext'>" . $others . "</label>";     } 
+if ($others=="on")     {        echo "&nbsp;&nbsp;&nbsp;" . "<label
+class='boldtext'>" . "Others" . "</label>";     } 
 
 
 echo "</br>";  
@@ -397,7 +427,7 @@ else
   
 } 
 
-     $sql = "UPDATE screenertable SET firstname='$fname', lastname='$lname', middlename='$mname', address='$address', city='$city', state='$state', zip='$zip', country='$country', homephone='$hphone', cellphone='$cphone', email='$email', referral='$referral', babysname='$babysname', babysdob='$babysdob', babystatus='$babystatus', storefrom='$storefrom', milkcommit='$milkcommit', herbs='$herbs', alcohol='$alcohol', transfusion='$transfusion', lastedit='$lastedit', lasteditdate='$lasteditdate', donorpacket='$donorpacket', donorcomment='$donorcomment', organization = '$organization', donateamount = $donateamount, rxbcdate = '$rxbcdate', smoke = '$smoke', organizationother='$organizationother', rxbcchoose = '$rxbcchoose', herbschoose = '$herbschoose', alcoholchoose = '$alcoholchoose', ivDrug = '$ivDrug', transfusionchoose = '$transfusionchoose', workchoose = '$workchoose', work = '$work', determinechoose = '$determinechoose', determine = '$determine', heptest = '$heptest', tattooschoose = '$tattooschoose', tattoos = '$tattoos', hivtest = '$hivtest', tbtest = '$tbtest', tbtreat = '$tbtreat', herpeschoose = '$herpeschoose', herpes = '$herpes', hemophilia = '$hemophilia', hormones = '$hormones', ukmoschoose = '$ukmoschoose', ukmos = '$ukmos', eurochoose = '$eurochoose', euro = '$euro', diet = '$diet', process = '$process', reg = '$reg', dfree = '$dfree', veg = '$veg', vegan = '$vegan', others = '$others'  WHERE donornumber = '$dnum'";
+     $sql = "UPDATE screenertable SET firstname='$fname', lastname='$lname', middlename='$mname', address='$address', city='$city', state='$state', zip='$zip', country='$country', homephone='$hphone', cellphone='$cphone', email='$email', referral='$referral', babysname='$babysname', babysdob='$babysdob', babystatus='$babystatus', storefrom='$storefrom', milkcommit='$milkcommit', herbs='$herbs', alcohol='$alcohol', transfusion='$transfusion', lastedit='$lastedit', lasteditdate='$lasteditdate', donorpacket='$donorpacket', donorcomment='$donorcomment', organization = '$organization', donateamount = $donateamount, rxbcdate = '$rxbcdate', smoke = '$smoke', organizationother='$organizationother', rxbcchoose = '$rxbcchoose', herbschoose = '$herbschoose', alcoholchoose = '$alcoholchoose', ivDrug = '$ivDrug', transfusionchoose = '$transfusionchoose', workchoose = '$workchoose', work = '$work', determinechoose = '$determinechoose', determine = '$determine', heptest = '$heptest', tattooschoose = '$tattooschoose', tattoos = '$tattoos', hivtest = '$hivtest', tbtest = '$tbtest', tbtreat = '$tbtreat', herpeschoose = '$herpeschoose', herpes = '$herpes', hemophilia = '$hemophilia', hormones = '$hormones', ukmoschoose = '$ukmoschoose', ukmos = '$ukmos', eurochoose = '$eurochoose', euro = '$euro', process = '$process', reg = '$reg', dfree = '$dfree', veg = '$veg', vegan = '$vegan', others = '$others'  WHERE donornumber = '$dnum'";
 
    $result = mysql_query($sql, $con);
 	//echo $sql;
@@ -458,9 +488,8 @@ else
    mysql_select_db('milk_db', $con);
 
 
-//  Next donor number  
 
-   $createdby = $_SESSION['uname'];
+  
 
 // Inserting donor into Donor Table
 

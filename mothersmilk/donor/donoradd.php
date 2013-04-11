@@ -183,7 +183,7 @@ echo "\n";
 echo "</br>";
 echo "</br>";
 
-echo "Amount can donate:&nbsp;<input type=\"text\" name=\"donateamount\" size=\"10\" maxlength=\"20\">\noz";
+echo "Amount can donate:&nbsp;<input type=\"text\" name=\"donateamount\" size=\"10\" maxlength=\"20\" value=\"0\">\noz";
 echo "</br>";
 echo "</br>";
 echo "Stored from:&nbsp;&nbsp;";
