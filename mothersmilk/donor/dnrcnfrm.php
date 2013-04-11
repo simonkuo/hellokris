@@ -393,7 +393,7 @@ if($determinechoose == "F" || $determinechoose == "D")
 else
 {
   
-  $process ="off";
+  $process ="";
   
 } 
 
