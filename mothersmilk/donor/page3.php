@@ -208,7 +208,7 @@
 </select>
 </p>
 <p>
-<label>46. Travel History</label> <br>
+<label>46. Travel History:</label> <br>
 
 <textarea rows="5" cols="30" name="q46" id="q46" value = <?php echo $row['q46']?> >
 

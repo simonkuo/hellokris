@@ -146,8 +146,8 @@ $page3_data = array (
 <span><?php echo $page3_data['q45']?> </span>
 </p>
 <p>
-<label>46. Travel History</label> <br>
-<span><?php echo $page3_data['q46']?> </span>
+<label>46. Travel History:</label> 
+<span><?php if ($page3_data['q46'] != "") echo "<br>" . $page3_data['q46']; else echo "N/A";?> </span>
 
 </p>
 <p>
