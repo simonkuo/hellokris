@@ -51,19 +51,20 @@ Print_r ($_SESSION);
 // when going from one page to the next 
 
 
-if (!$_SESSION['fconnect'])
-   {
-	$_SESSION['uname'] = $_POST["uname"]; 
-	$_SESSION['pwd'] = $_POST["pwd"];
-        $_SESSION['fconnect']=1;
-   } 
+$_SESSION['uname'] = $_POST["uname"]; 
+$_SESSION['pwd'] = $_POST["pwd"]; 
 
 /*  Connect to Data Base */
 
 $con = mysql_connect("localhost",$_SESSION["uname"],$_SESSION["pwd"]);
 
 //$mysqli = new mysqli('localhost',$_SESSION["uname"],$_SESSION["pwd"], 'milkdb');
-
+if (!$_SESSION['fconnect'])
+   {
+  $_SESSION['uname'] = $_POST["uname"]; 
+  $_SESSION['pwd'] = $_POST["pwd"];
+        $_SESSION['fconnect']=1;
+   } 
 //$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'my_db');
 
 // echo $con;
