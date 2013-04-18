@@ -147,7 +147,7 @@ $page3_data = array (
 </p>
 <p>
 <label>46. Travel History:</label> 
-<span><?php if ($page3_data['q46'] != "") echo "<br>" . $page3_data['q46']; else echo "N/A";?> </span>
+<span><?php if ($page3_data['q46'] != "") echo $page3_data['q46']; else echo "N/A";?> </span>
 
 </p>
 <p>

@@ -72,7 +72,7 @@ $row = mysql_fetch_assoc($result);
 $diet = $row['diet'];
 $organization = $row['organization'];
 $organizationother = $row['organizationother'];
-$donorstatus = $row['determinechoose'];
+$determinechoose = $row['determinechoose'];
 $rxbcchoose = $row['rxbcchoose'];
 $rxbcdate = $row['rxbcdate'];
 $babysdob = $row['babysdob']; 
@@ -156,9 +156,9 @@ echo "</br>";
 echo "</br>";
 echo "</br>";
 
-echo "Status:&nbsp;&nbsp;&nbsp;" . "<b>$donorstatus</b>"; 
+echo "Status:&nbsp;&nbsp;&nbsp;" . "<b>$determinechoose</b>"; 
 
-echo "<input type=\"hidden\" name=\"donorstatus\" value=\"$donorstatus\">\n";
+echo "<input type=\"hidden\" name=\"donorstatus\" value=\"$determinechoose\">\n";
 
 echo "</br>";
 echo "</br>";

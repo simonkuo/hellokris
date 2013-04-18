@@ -152,6 +152,7 @@ echo "<br>";
 
 */
 
+//$donornumberr = 'null';
 
 if (($packagenumber == 0) and ($donornumberr == 0) and ($fdate == '--') and ($tdate == '--'))
    {
@@ -159,7 +160,7 @@ if (($packagenumber == 0) and ($donornumberr == 0) and ($fdate == '--') and ($td
    }
 else
    {
-       $sql   = "SELECT * FROM receivertable where packagenumber =  $packagenumber or donornumberr = '$donornumberr' or receivedate between '$fdate' and '$tdate' order by packagenumber";
+       $sql   = "SELECT * FROM receivertable where packagenumber =  $packagenumber or donornumberr = '$donornumberr' or receivedate between '$fdate' and '$tdate' ";
    }
 
 /*

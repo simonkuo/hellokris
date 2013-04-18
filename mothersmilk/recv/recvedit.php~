@@ -36,6 +36,7 @@ include '../include/mystylex.php';
 
 $packagenumber = $_GET["packagenumber"];
 
+$processnumber = $_POST["processnumber"];
 
 
 // connect to database

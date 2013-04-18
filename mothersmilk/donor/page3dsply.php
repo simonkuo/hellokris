@@ -108,7 +108,7 @@
 <?php 
 if ($row['q46'] != "")
 {
-echo "<br>" . $row['q46']; 
+echo $row['q46']; 
 }
 else 
 {

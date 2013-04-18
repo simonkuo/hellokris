@@ -77,7 +77,7 @@ $con = mysql_connect("localhost",$_SESSION["uname"],$_SESSION["pwd"]);
 
    
 
-   echo  "<P><FONT SIZE=5><B>Receiving Milk Search Results</B></FONT></P>";
+   echo  "<P><FONT SIZE=5><B>Packet Search Results</B></FONT></P>";
 
    echo "</br>";
    echo "</br>";
@@ -117,7 +117,7 @@ echo "<br>";
 
 if (($packetnum == '7777') and ($donornumberr == '77777') and ($fdate == '--'))
    {
-       $sql   = "SELECT * FROM receivertable";
+       $sql   = "SELECT * FROM receivertable order by packagenumber";
    }
 else
    {
@@ -138,16 +138,18 @@ if (!$result) {
 
 
 echo "<TABLE FRAME=VOID CELLSPACING=0 COLS=4 RULES=NONE BORDER=0>\n";
-echo "	<COLGROUP><COL WIDTH=255><COL WIDTH=273><COL WIDTH=276><COL WIDTH=219></COLGROUP>\n";
+echo "	<COLGROUP><COL WIDTH=150><COL WIDTH=20><COL WIDTH=150><COL WIDTH=280><COL WIDTH=100></COLGROUP>\n";
 echo "	<TBODY>\n";
 echo "		<TR>\n";
-echo "			<TD WIDTH=155 HEIGHT=33 ALIGN=LEFT><B><FONT SIZE=5>Donor #</FONT></B></TD>\n";
-echo "			<TD WIDTH=173 ALIGN=LEFT><B><FONT SIZE=5>Number of Coolers</FONT></B></TD>\n";
-echo "			<TD WIDTH=176 ALIGN=LEFT><B><FONT SIZE=5>Received Date</FONT></B></TD>\n";
-echo "			<TD WIDTH=219 ALIGN=LEFT><B><FONT SIZE=5>Expression Date</FONT></B></TD>\n";
+echo "			<TD WIDTH=100 HEIGHT=33 ALIGN=LEFT><B><FONT SIZE=5>Package Number</FONT></B></TD>\n";
+echo "			<TD WIDTH=160 ALIGN=LEFT><B><FONT SIZE=5>Package State</FONT></B></TD>\n";
+echo "			<TD WIDTH=100 ALIGN=LEFT><B><FONT SIZE=5>Cooler Number</FONT></B></TD>\n";
+echo "			<TD WIDTH=180 ALIGN=LEFT><B><FONT SIZE=5>Expression Range</FONT></B></TD>\n";
+echo "			<TD WIDTH=180 ALIGN=LEFT><B><FONT SIZE=5>Location</FONT></B></TD>\n";
 echo "		</TR>\n";
 echo "		<TR>\n";
 echo "			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>\n";
+echo "			<TD ALIGN=LEFT><BR></TD>\n";
 echo "			<TD ALIGN=LEFT><BR></TD>\n";
 echo "			<TD ALIGN=LEFT><BR></TD>\n";
 echo "			<TD ALIGN=LEFT><BR></TD>\n";
@@ -156,16 +158,18 @@ echo "		</TR>\n";
 
 while ($row = mysql_fetch_assoc($result)) 
    {
-       $rdate=$row['receivedate'];
-       $cdate=$row['createdate'];
-       $pkgnum = $row['packagenumber'];
-       $donornum=$row['donornumberr'];
+       $packagenumber = $row['packagenumber'];
+       $packetstate = $row['packetstate'];
+       $coolernumber=$row['coolernumber'];
+       $expressionrange=$row['expressionrange'];
+       $storagelocation=$row['storagelocation'];
 
        echo "<TR>\n";
-       echo "<TD HEIGHT=25 ALIGN=LEFT><FONT SIZE=4><a href=\"./recvrdsply.php?dnum=$donornum\"> $donornum</a></FONT></TD>\n";
-       echo "<TD ALIGN=LEFT><FONT SIZE=4>$pkgnum</FONT></TD>\n";
-       echo "<TD ALIGN=LEFT><FONT SIZE=4>$rdate</FONT></TD>\n";
-       echo "<TD ALIGN=LEFT><FONT SIZE=4>$cdate</FONT></TD>\n";
+       echo "<TD HEIGHT=25 ALIGN=LEFT><FONT SIZE=4><a href=\"./recvrdsply.php?packagenumber=$packagenumber\"> $packagenumber</a></FONT></TD>\n";
+       echo "<TD ALIGN=LEFT><FONT SIZE=4>$packetstate</FONT></TD>\n";
+       echo "<TD ALIGN=LEFT><FONT SIZE=4>$coolernumber</FONT></TD>\n";
+       echo "<TD ALIGN=LEFT><FONT SIZE=4>$expressionrange</FONT></TD>\n";
+       echo "<TD ALIGN=LEFT><FONT SIZE=4>$storagelocation</FONT></TD>\n";
        echo "</TR>\n";
    
        $rec = 1;   /* triggers when records are found  */
@@ -180,6 +184,7 @@ if (!$rec)
        echo "<TD ALIGN=LEFT><BR></TD>\n";
        echo "<TD ALIGN=LEFT><BR></TD>\n";
        echo "<TD ALIGN=LEFT><BR></TD>\n";
+       echo "<TD ALIGN=LEFT><BR></TD>\n";
        echo "</TR>\n";
     }
 
@@ -189,25 +194,12 @@ echo "</TABLE>\n";
 echo "\n";
 
 
-/*
-
-   while ($row = mysql_fetch_assoc($result)) {
-    echo $row[dnrnum] . " " . $row['rdate'] . " " . $row['rdesigna'] . " " . $row['pkgnum'];
-    $rec = 1;   
-    echo "</br>";
-   }
-
-if (!$rec) {
-   echo "No Records Found\n";
-   echo "</br>";
-}
-*/
 
 
-   mysql_free_result($result); 
+mysql_free_result($result); 
 
 
-   mysql_close($con);
+mysql_close($con);
 
 
 echo "</br>";
@@ -216,16 +208,11 @@ echo "</br>";
 echo "</br>";
 
 
-
-if ($urights==1 or $urights==2)
-   {
-       echo "<p><a href=\"./recvadd.php?dnum=$dnum\">Add</a></p>\n";
-   }
 
 
 echo "<p><a href=\"./receivingmenu.php\">Receiver Menu</a></p>\n";
 //echo "</br>";
-echo "<p><a href=\"./recvsearch.php\">Search</a></p>\n";
+echo "<p><a href=\"./recvsearch.php\">Package Search</a></p>\n";
 //echo "</br>";
 
 

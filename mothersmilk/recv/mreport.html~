@@ -1,0 +1,134 @@
+<div class="mainbody">
+<br>
+
+*************************************************************************************
+
+<p><b>Illness and Medication Report</b></p>
+
+Who was Ill?&nbsp;&nbsp;
+
+<select name="illness">  
+<option value="Donor">Donor</option>
+<option value="Family Member">Family Member</option>
+</select>
+
+<br>
+<br>
+Please Explain:
+<br>
+<br>
+<textarea name="illnesscomment" rows=2 cols=25 maxlength=52 >
+</textarea>
+
+<br>
+<br>
+
+Illness&nbsp;&nbsp;Began:&nbsp;&nbsp;&nbsp;
+<input type=int name=illbmm size=2 maxlength=2 value="mm">
+&nbsp;&nbsp;<input type=int name=illbdd size=2 maxlength=2>
+&nbsp;&nbsp;<input type=int name=illbyy size=4 maxlength=4>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ended:&nbsp;&nbsp;&nbsp;
+<input type=int name=illemm size=2 maxlength=2 value="mm">
+&nbsp;&nbsp;<input type=int name=illedd size=2 maxlength=2>
+&nbsp;&nbsp;<input type=int name=illeyy size=4 maxlength=4>
+&nbsp;&nbsp;mm-dd-yyyy
+
+<br>
+<br>
+Description of Symptoms:
+<br>
+<br>
+<textarea name="symptomdescription" rows=2 cols=25 maxlength=52 >
+</textarea>
+
+<br>
+<br>
+
+Fever?&nbsp;&nbsp;
+
+<input type ="text" name="fever" size=3 maxlength=3>
+&nbsp;&nbsp;F
+
+
+</br>
+</br>
+
+
+Fever&nbsp;&nbsp;Started:&nbsp;&nbsp;&nbsp;
+<input type=int name=fsmm size=2 maxlength=2 value="mm">
+&nbsp;&nbsp;<input type=int name=fsdd size=2 maxlength=2 value="dd">
+&nbsp;&nbsp;<input type=int name=fsyy size=4 maxlength=4 value="yyyy">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ended:&nbsp;&nbsp;&nbsp;
+<input type=int name=femm size=2 maxlength=2 value="mm">
+&nbsp;&nbsp;<input type=int name=fedd size=2 maxlength=2 value="dd">
+&nbsp;&nbsp;<input type=int name=feyy size=4 maxlength=4 value="yyyy">
+
+</br>
+</br>
+
+DONOR MEDICATION USE
+
+<select name="meduse">
+<option value="Yes">Yes</option>
+<option value="No">No</option>
+</select>
+
+</br>
+</br>
+
+Types:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=text name=medtypes size=20 maxlength=20> 
+</br>
+</br>
+
+Dosage:&nbsp;&nbsp;<input type=text name=dosage size=20 maxlength=20> 
+</br>
+</br>
+
+
+Dosage&nbsp;&nbsp;Started:&nbsp;&nbsp;&nbsp;
+<input type=int name=dsmm size=2 maxlength=2 value="mm">
+&nbsp;&nbsp;<input type=int name=dsdd size=2 maxlength=2 value="dd">
+&nbsp;&nbsp;<input type=int name=dsyy size=4 maxlength=4 value="yyyy">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ended:&nbsp;&nbsp;&nbsp;
+<input type=int name=demm size=2 maxlength=2 value="mm">
+&nbsp;&nbsp;<input type=int name=dedd size=2 maxlength=2 value="dd">
+&nbsp;&nbsp;<input type=int name=deyy size=4 maxlength=4 value="yyyy">
+
+<br>
+<br>
+Notes/Comments:
+<br>
+<br>
+<textarea name="reportcomments" rows=2 cols=50 maxlength=102 >
+</textarea>
+
+<br>
+<br>
+
+
+Signed:&nbsp;&nbsp;<input type=text name=signature size=30 maxlength=30> 
+</br>
+</br>
+
+
+Date:&nbsp;&nbsp;&nbsp;&nbsp;
+<input type=int name=smm size=2 maxlength=2 value="mm">
+&nbsp;&nbsp;<input type=int name=sdd size=2 maxlength=2 value="dd">
+&nbsp;&nbsp;<input type=int name=syy size=4 maxlength=4 value="yyyy">
+
+</br>
+</br>
+
+
+*************************************************************************************
+
+
+
+
+
+
+
+</div>

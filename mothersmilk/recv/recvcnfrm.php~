@@ -692,7 +692,7 @@ mysql_close($con);
 echo "</br>";
 echo "</br>";
 
-// change links depending on "Daily Search"
+$processnumber = 1;
 
 if ($processnumber == 0) 
     {
