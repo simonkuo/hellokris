@@ -1,6 +1,7 @@
 <h2> Follow up </h2>
 <?php
 	echo "<div><label>Donor Packet:</label>"; 
+//get data from database and display accordingly
 if ($row['donorpacketbymail'] != '')
 {
 	echo " <span>mail</span>";

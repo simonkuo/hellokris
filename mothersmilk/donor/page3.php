@@ -208,9 +208,9 @@
 </select>
 </p>
 <p>
-<label>46. Travel History</label> <br>
+<label>46. Travel History:</label> <br>
 
-<textarea rows="5" cols="30" name="q46" id="q46" value = <?php echo $row['q46']?> >
+<textarea rows="5" cols="30" name="q46" id="q46" value = <?php if (isset($row['q46'])) echo $row['q46']; else echo "N/A";?> >
 
 </textarea>
 </p>

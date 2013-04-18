@@ -14,6 +14,7 @@ echo "<h1>Follow up</h1>";
 $donorpacketbymail = "";
 $donorpacketbyemail = "";
 $donorpacketbyfax = "";
+//Handle checkbox
 if (IsChecked('donorpacketby','mail'))
 {
 	$donorpacketbymail = 'on';
@@ -58,19 +59,25 @@ $followup_data = array (
 			'staffinitpacketreview' => $_POST['staffinitpacketreview'],
 		);
 echo "<div><label>Donor Packet:</label>"; 
-if ($followup_data['donorpacketbymail'] != '')
+if ($followup_data['donorpacketbymail'] == '' && $followup_data['donorpacketbyemail'] == '' && $followup_data['donorpacketbyfax'] == '')
 {
-	echo " <span>mail</span>";
+	echo "<span>N/A</span>";
 }
-if ($followup_data['donorpacketbyemail'] != '')
+else
 {
-	echo " <span>email</span>";
+	if ($followup_data['donorpacketbymail'] != '')
+	{
+		echo " <span>mail</span>";
+	}
+	if ($followup_data['donorpacketbyemail'] != '')
+	{
+		echo " <span>email</span>";
+	}
+	if ($followup_data['donorpacketbyfax'] != '')
+	{
+		echo " <span>fax</span>";
+	}
 }
-if ($followup_data['donorpacketbyfax'] != '')
-{
-	echo " <span>fax</span>";
-}
-
 if ($followup_data['donorpacketbyfax'] != '' || $followup_data['donorpacketbymail'] != '' || $followup_data['donorpacketbyemail'] != '')
 {
 if ($followup_data['datesentpacket'] != '')

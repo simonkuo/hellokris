@@ -472,7 +472,9 @@ $transactionnumber = $lasttransactionnumber + 1;
 	
 	//Update followup data in screenertablelog
 	update_followup_data_log($dnum,$transactionnumber,$followup_data); 
-  update_followup_data_log($dnum,$transactionnumber, $page1_data);
+	//Update page 1 in screenertablelog
+	update_followup_data_log($dnum,$transactionnumber, $page1_data);
+	//Update page 1 in screenertablelog
 	update_followup_data_log($dnum,$transactionnumber, $page3_data);
    }
 else

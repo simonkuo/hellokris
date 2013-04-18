@@ -209,8 +209,6 @@ $packetstate = $row['packetstate'];
 $packetstateother = $row['packetstateother'];
 $storagelocation = $row['storagelocation'];
 $storagelocationother = $row['storagelocationother'];
-$storefrom = $row['storefrom'];
-$milkgrade = $row['milkgrade'];
 
 $rxbcchoose = $row['rxbcchoose'];
 $donorstatus = $row['donorstatus'];

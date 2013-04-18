@@ -103,8 +103,19 @@
 <span><?php echo $row['q45']?> </span>
 </p>
 <p>
-<label>46. Travel History</label> <br>
-<span><?php echo $row['q46']?> </span>
+<label>46. Travel History:</label> 
+<span>
+<?php 
+if ($row['q46'] != "")
+{
+echo $row['q46']; 
+}
+else 
+{
+echo "N/A";
+}
+?>
+</span>
 
 </p>
 <p>

@@ -19,15 +19,16 @@
 <P><FONT SIZE=5><B>Receiving Menu</B></FONT></P>
 -->
 
-<?php
+</br>
+   
+<P><FONT SIZE=5><a href="./recvsearch.php">Package Search</a></FONT></P>
 
-   echo "</br>";
-   echo "<P><FONT SIZE=5><a href=\"./recvsearch.php\">Receiver Search</a></FONT></P>\n";
-   echo "<P><FONT SIZE=5><a href=\"../dbenter.php\">Main Menu</a></FONT></P>\n";
+<P><FONT SIZE=5><a href="./donorsearch.php">Add Packages</a></FONT></P>
+
+<P><FONT SIZE=5><a href="./dailysearch.php">Daily Search</a></FONT></P>
+
+<P><FONT SIZE=5><a href="../dbenter.php">Main Menu</a></FONT></P>
  
-
-?>
-
 
 </P>
 
