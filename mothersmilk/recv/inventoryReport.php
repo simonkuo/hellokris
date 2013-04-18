@@ -14,6 +14,7 @@ session_start();
 	<META NAME="CREATED" CONTENT="20131413;15512700">
 	<META NAME="CHANGEDBY" CONTENT="Thanh Au">
 	<META NAME="CHANGED" CONTENT="20131413;16005500">
+	<link type="text/css" rel="stylesheet" href="../donor/mystyle.css">
 <!--
 
 -->
@@ -126,7 +127,7 @@ mysql_free_result($result);
 mysql_close($con);
 ?>
 </div>
-
+<div class = "anchor"><a href="./receivingmenu.php">Receiver Menu</a></div>
 
 
 </BODY>
