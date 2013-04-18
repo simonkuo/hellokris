@@ -350,11 +350,6 @@ if ($others=="on")     {        echo "&nbsp;&nbsp;&nbsp;" . "<label
 class='boldtext'>" . "Others" . "</label>";     } 
 
 
-echo "</br>";  
-echo "</br>";  
-
-echo "Donor Packet:&nbsp;&nbsp;" . "<label
-class='boldtext'>" . $donorpacket . "</label>";
 
 echo "</br>";
 echo "</br>";
