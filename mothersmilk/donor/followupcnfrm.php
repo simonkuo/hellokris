@@ -172,6 +172,7 @@ echo "</div>";
 if ($followup_data['datepacketreview'] != '' || $followup_data['packetreviewstatus'] != '' ||$followup_data['staffinitpacketreview'] != '' )
 {
 echo "<div><label>Packet Review:</label>";
+
 if ($followup_data['datepacketreview'] != '')
 {
 echo "<label>Date:</label> <span>" . $followup_data['datepacketreview'] . "</span>";
@@ -184,6 +185,7 @@ if ($followup_data['staffinitpacketreview'] != '')
 {
 echo "<label>Staff Init:</label> <span>" . $followup_data['staffinitpacketreview'].  "</span>";
 }
+
 echo "</div>";
 
 }
