@@ -64,6 +64,7 @@ $organizationother = $row['organizationother'];
 $fname = $row['firstname'];
 $mname = $row['middlename'];
 $lname = $row['lastname'];
+$donoraka = $row['donoraka'];
 $tstdate = $row['dnrapdate']; 
 $email = $row['email']; 
 $referral = $row['referral']; 
@@ -220,6 +221,11 @@ echo "Middle Name:&nbsp; <input type=\"text\" name=\"donormname\" value=\"$mname
 <p>
 <?php
 echo "Last Name:&nbsp;&nbsp;&nbsp; <input type=\"text\" name=\"donorlname\" value=\"$lname\" size=\"25\" maxlength=\"20\">\n";
+?>
+</p>
+<p>
+<?php
+echo "AKA:&nbsp;&nbsp;&nbsp; <input type=\"text\" name=\"donoraka\" value=\"$donoraka\" size=\"25\" maxlength=\"20\">\n";
 ?>
 </p>
 <p>

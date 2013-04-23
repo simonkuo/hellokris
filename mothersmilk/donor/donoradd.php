@@ -67,8 +67,7 @@ echo "</br>\n";
 
 Application Status:&nbsp;&nbsp;&nbsp;
 
-<select name="determinechoose" id="determinechoose" onchange="showme2('determinechoose','determine')">  
-<option value="N/A" >Please Select</option>   
+<select name="determinechoose" id="determinechoose">    
 <option value="A" >Applied or Awaiting</option>
 <option value="P" >Passed Phone Screen</option>
 <option value="NP" >No Passed Phone Screen</option>
@@ -76,9 +75,6 @@ Application Status:&nbsp;&nbsp;&nbsp;
 <option value="D" >Donor Accepted</option>
 <option value="C" >Closed</option>
 </select>
-&nbsp;&nbsp;&nbsp;
-
-<input type ="text" name="determine" id="determine" style="display:none;position:relative;visibility:hidden;" value="" size=20 maxlength=20 placeholder = "mm-dd-yyyy">  
 
 <?php
 
@@ -120,6 +116,9 @@ echo "Middle Name:&nbsp; <input type=\"text\" name=\"donormname\" size=\"25\" ma
 echo "</br>\n";
 echo "</br>\n";
 echo "Last Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type=\"text\" name=\"donorlname\" size=\"25\" maxlength=\"20\">\n";
+echo "</br>\n";
+echo "</br>\n";
+echo "AKA: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type=\"text\" name=\"donoraka\" size=\"25\" maxlength=\"20\">\n";
 echo "</br>\n";
 echo "</br>\n";
 echo "Address:&nbsp;&nbsp; <input type=\"text\" name=\"address\" size=\"25\" maxlength=\"20\">\n";
@@ -334,7 +333,7 @@ echo "</br>";
 echo "TB Test:&nbsp;&nbsp;";
 
 echo "<select name=\"tbtest\">\n";
-echo "<option value=\"N/A\" >Please Select</option>\n";
+echo "<option value=\"N/A\" >N/A</option>\n";
 echo "<option value=\"Yes\" >Yes</option>\n";
 echo "<option value=\"No\" >No</option>\n";
 echo "<option value=\"Ns\" >Ns</option>\n";
