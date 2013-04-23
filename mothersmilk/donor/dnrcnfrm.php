@@ -412,14 +412,14 @@ include 'page3cnfm.php';
 
 if($determinechoose == "F" || $determinechoose == "D")
 {
-  $processflag ="N";
+  $processflag ="Y";
   
 }
 else
 {
   
 
-  $processflag ="Y";
+  $processflag ="N";
 
   
 } 
