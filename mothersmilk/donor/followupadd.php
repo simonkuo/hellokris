@@ -66,7 +66,7 @@
 </div>
 <div>
 <label>Packet Review:</label>
-<label>Date</label>
+<label>Date:</label>
 <input type = "text" name="datepacketreview" id="datepacketreview" placeholder="mm-dd-yyyy" value = <?=$row['datepacketreview']?> >
 <label>Status:</label>
 <select name="packetreviewstatus" id="packetreviewstatus" >
