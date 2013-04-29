@@ -14,9 +14,9 @@ session_start();
 	<META NAME="CREATED" CONTENT="20121123;15512700">
 	<META NAME="CHANGEDBY" CONTENT="Pat Dumalanta">
 	<META NAME="CHANGED" CONTENT="20121123;16005500">
-<!--
+
 <?php include '../mystyle.php'; ?>
--->
+
 
 </HEAD>
 <BODY LANG="en-US" DIR="LTR">
@@ -31,10 +31,10 @@ session_start();
 $urights = $_SESSION['urights'];
 
 $determinechoose = $_POST["determinechoose"];
-
+/*
 echo "determinechoose:" . $determinechoose;
-
 echo "<br>";   
+*/
 
 echo  "<P><FONT SIZE=4><B>Search Results</B></FONT></P>";
 
@@ -51,9 +51,10 @@ mysql_select_db('milk_db', $con);
 
 $sql = "SELECT screenertable.donornumber, screenertable.firstname, screenertable.lastname, screenertable.organization, screenertable.determinechoose from screenertable  inner join receivertable on screenertable.donornumber = receivertable.donornumberr where screenertable.determinechoose = '$determinechoose' and screenertable.processflag = 'Y' group by screenertable.donornumber"; 
 
+/*
 echo $sql;
 echo "</br>";
-
+*/
 $result = mysql_query($sql, $con); 
 
 if (!$result) 

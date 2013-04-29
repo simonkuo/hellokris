@@ -95,7 +95,7 @@ while ($row = mysql_fetch_assoc($result))
 
 
        echo "<TR>\n";
-       echo "<TD HEIGHT=25 ALIGN=LEFT><FONT SIZE=4><a href=\"./dailypackagesearch.php?dnum=$donornum\"> $donornum</a></FONT></TD>\n";
+       echo "<TD HEIGHT=25 ALIGN=LEFT><FONT SIZE=4><a href=\"./dailypackagesearch.php?dnum=$donornum&determinechoose=$determinechoose\"> $donornum</a></FONT></TD>\n";
        echo "<TD ALIGN=LEFT><FONT SIZE=4>$fname</FONT></TD>\n";
        echo "<TD ALIGN=LEFT><FONT SIZE=4>$lname</FONT></TD>\n";
        echo "<TD ALIGN=LEFT><FONT SIZE=4>$organization</FONT></TD>\n";

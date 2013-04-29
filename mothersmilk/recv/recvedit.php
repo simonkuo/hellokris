@@ -17,7 +17,7 @@ session_start();
 
 <?php 
 
-//include '../mystyle.php'; 
+include '../mystyle.php'; 
 //include '../include main.js'; 
 
 include '../include/main.js';
@@ -560,13 +560,12 @@ $processnumber = $row['processnumber'];
 
 echo "<input type=\"hidden\" name=\"processnumber\" value=\"$processnumber\">\n";
 
-
+/*
 echo "</br>";
 echo "processnumber: " . $processnumber;
 echo "</br>";
+*/
 
-
-echo "</br>"; 
 
 echo "</br>\n";
 

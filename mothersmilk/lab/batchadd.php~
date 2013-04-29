@@ -174,7 +174,7 @@ echo "		</TR>\n";
 echo "		<TR>\n";
 echo "			<TD WIDTH=155 HEIGHT=33 ALIGN=LEFT><B><FONT SIZE=3>$pasterizedbatchsampleid</FONT></B></TD>\n";
 echo "			<TD WIDTH=173 ALIGN=LEFT><B><FONT SIZE=3>$pasterizedbatchsamplestatus</FONT></B></TD>\n";
-echo "			<TD WIDTH=176 ALIGN=LEFT><B><FONT SIZE=3><a href=\"./sampleadd.php?sampleid=$pasterizedbatchsampleid\">Add</a></FONT></B></TD>\n";
+echo "			<TD WIDTH=176 ALIGN=LEFT><B><FONT SIZE=3><a href=\"./sampleadd.php?sampleid=$pasterizedbatchsampleid\">Add</a></B></FONT></B></TD>\n";
 echo "		</TR>\n";
 
 while ($row = mysql_fetch_assoc($resultd)) 

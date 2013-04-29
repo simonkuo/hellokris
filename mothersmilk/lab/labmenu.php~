@@ -39,11 +39,11 @@ echo "<p><a href=\"./thawgroups.php\">Create Batch</a></p>\n";
 echo "</br>";
 
 echo "</br>";
-echo "<p><a href=\"./batchsearch.php\">Edit Batch</a></p>\n";
+echo "<p><a href=\"./batchadd.php\">Edit Batch</a></p>\n";
 echo "</br>";
 
 echo "</br>";
-echo "<p><a href=\"./samplesearch.php\">Edit Sample</a></p>\n";
+echo "<p><a href=\"./bottleadd.php\">Edit Sample</a></p>\n";
 echo "</br>";
 
 

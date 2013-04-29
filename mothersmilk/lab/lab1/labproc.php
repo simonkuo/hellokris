@@ -14,9 +14,9 @@ session_start();
 	<META NAME="CREATED" CONTENT="20121123;15512700">
 	<META NAME="CHANGEDBY" CONTENT="Pat Dumalanta">
 	<META NAME="CHANGED" CONTENT="20121123;16005500">
-<!--
+
 <?php include '../mystyle.php'; ?>
--->
+
 
 </HEAD>
 <BODY LANG="en-US" DIR="LTR">
@@ -28,28 +28,33 @@ session_start();
 
 
 
-// Print_r ($_SESSION);
+//Print_r ($_SESSION);
 
 echo "</br>";
-echo "<p><a href=\"../recv/packetsearch.php\">Create Thaw Group</a></p>\n";
+echo "<p><a href=\"./bpooladd.php\">Create New Blue Pool</a></p>\n";
+echo "</br>";
+/*
+echo "</br>";
+echo "<p><a href=\"./bpoolproc.php\">Blue Pool Processing</a></p>\n";
+echo "</br>";
+*/
+
+echo "</br>";
+echo "<p><a href=\"./batchadd.php\">Create New Batch</a></p>\n";
 echo "</br>";
 
 echo "</br>";
-echo "<p><a href=\"./thawgroups.php\">Create Batch</a></p>\n";
+echo "<p><a href=\"./bottleadd.php\">Create New Bottle</a></p>\n";
 echo "</br>";
 
+/*
 echo "</br>";
-echo "<p><a href=\"./batchsearch.php\">Edit Batch</a></p>\n";
+echo "<p><a href=\"./logfile.php\">Log File</a></p>\n";
 echo "</br>";
+*/
 
 echo "</br>";
-echo "<p><a href=\"./samplesearch.php\">Edit Sample</a></p>\n";
-echo "</br>";
-
-
-
-echo "</br>";
-echo "<p><a href=\"../dbenter.php\">Main menu</a></p>\n";
+echo "<p><a href=\"./labmenu.php\">Lab Menu</a></p>\n";
 echo "</br>";
 
 

@@ -14,9 +14,9 @@ session_start();
 	<META NAME="CREATED" CONTENT="20121123;15512700">
 	<META NAME="CHANGEDBY" CONTENT="Pat Dumalanta">
 	<META NAME="CHANGED" CONTENT="20121123;16005500">
-<!--
+
 <?php include '../mystyle.php'; ?>
--->
+
 
 </HEAD>
 <BODY LANG="en-US" DIR="LTR">

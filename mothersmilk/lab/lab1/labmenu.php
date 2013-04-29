@@ -31,19 +31,25 @@ session_start();
 // Print_r ($_SESSION);
 
 echo "</br>";
-echo "<p><a href=\"../recv/packetsearch.php\">Create Thaw Group</a></p>\n";
+echo "<p><a href=\"./labsearch.php\">Lab Search</a></p>\n";
+echo "</br>";
+
+/*
+echo "</br>";
+echo "<p><a href=\"./labproc.php\">Lab Processing</a></p>\n";
+echo "</br>";
+*/
+
+echo "</br>";
+echo "<p><a href=\"./bpooladd.php\">Create New Blue Pool</a></p>\n";
 echo "</br>";
 
 echo "</br>";
-echo "<p><a href=\"./thawgroups.php\">Create Batch</a></p>\n";
+echo "<p><a href=\"./batchadd.php\">Create New Batch</a></p>\n";
 echo "</br>";
 
 echo "</br>";
-echo "<p><a href=\"./batchsearch.php\">Edit Batch</a></p>\n";
-echo "</br>";
-
-echo "</br>";
-echo "<p><a href=\"./samplesearch.php\">Edit Sample</a></p>\n";
+echo "<p><a href=\"./bottleadd.php\">Create New Bottle</a></p>\n";
 echo "</br>";
 
 
