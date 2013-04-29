@@ -1,9 +1,20 @@
-
+$(document).ready(function(){
+	alert("test");
+	function displaySelectBox()
+	{
+		alert("test");
+		$('#type').change(function() {
+			var selectVal = $('#type:selected').val();
+			alert(selectVal);
+		});
+	};
+});
 
 
 
 <script>
-  
+
+	
     function showme(es,ei,other)
       {  
         var s = document.getElementById(es);
