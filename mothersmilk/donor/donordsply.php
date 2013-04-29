@@ -138,9 +138,9 @@ echo "</br>";
 echo "</br>"; 
 echo "First Name:&nbsp;&nbsp;" . "<label class='boldtext'>" . $row['firstname'] . "</label>"; 
 echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Middle Name:  " . "<label class='boldtext'>" . $row['middlename'] . "</label>"; 
-// echo "</br>"; 
-// echo "</br>"; 
+
 echo "&nbsp;&nbsp;&nbsp;&nbsp;Last Name:  " . "<label class='boldtext'>" . $row['lastname'] . "</label>"; 
+echo "&nbsp;&nbsp;&nbsp;&nbsp;AKA:  " . "<label class='boldtext'>" . $row['donoraka'] . "</label>"; 
 echo "</br>"; 
 echo "</br>"; 
 

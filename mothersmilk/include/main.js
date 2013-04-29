@@ -37,7 +37,7 @@ $(document).ready(function(){
         var s = document.getElementById(es);
         var h = document.getElementById(ei);
         var flag = document.getElementById("process");
-            if( s.selectedIndex == 1|| s.selectedIndex ==2||s.selectedIndex ==3||s.selectedIndex ==4) 
+            if( s.selectedIndex == 5|| s.selectedIndex ==2||s.selectedIndex ==3||s.selectedIndex ==4) 
                {
 		              h.style.display = "inline";
                   h.style.visibility="visible";
