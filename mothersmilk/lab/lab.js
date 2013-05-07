@@ -4,7 +4,44 @@ $(document).ready(function(){
 	addSelectBoxBaseOnType();
 	addSelectBoxIfStaphylococcusPresent();
 	addInputFieldForRetest();
+	displayTypeOfTest();
 });
+//Display type of test
+function displayTypeOfTest()
+{
+
+	$('#testType').change(function() {
+		
+		var selectVal = $('select#testType').val();
+		if (selectVal !== 'N/A')
+		{
+			$('.twoColumn').fadeIn();
+			if (selectVal === 'reTest')
+			{
+				$('#displayPreviousResult').fadeIn();
+				$('#displayPreviousResult').css({
+					"float": "left",
+					"width":"500px"
+					});
+				$('#editSampleResult').css({
+					"float": "left",
+					"width":"500px"
+					});
+			}
+			else if (selectVal === 'firstTest')
+			{
+				$('#displayPreviousResult').fadeOut();
+			}
+
+		}
+		if (selectVal === 'N/A')
+		{
+			$('.twoColumn').fadeOut();
+		
+		}
+		
+	});
+};
 //Add select box for pre-pasteurization or post-pasteurization
 function addSelectBoxBaseOnType()
 {

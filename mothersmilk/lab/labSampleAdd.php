@@ -70,7 +70,7 @@ $createBy = "Thanh";
 			</span>
 		</div>
 		<div>
-			<input type="submit" value="Submit">
+			<input type="submit" value="Submit"> 0
 		</div>
 	</form>
 </div>
