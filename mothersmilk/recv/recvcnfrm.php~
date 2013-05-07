@@ -53,11 +53,11 @@ if (!mysql_select_db('milk_db', $con))
    }
 
 $processnumber = $_POST["processnumber"];
-
+/*
 echo "</br>";
 echo "processnumber: " . $processnumber;
 echo "</br>";
-
+*/
 
 $mreport = $_POST["mreport"];
 
@@ -507,11 +507,13 @@ if ($ctype==1)
    //Receiver Package is being edited
    $sql = "update receivertable set organization = '$organization', organizationother = '$organizationother', receivedate = '$rdate', expressiondatefrom = '$expressiondatefrom', expressiondateto = '$expressiondateto', expressionrange = '$expressionrange', numberofounces = $numberofounces, coolernumber = $coolernumber, packetstate = '$packetstate', packetstateother = '$packetstateother', storagelocation = '$storagelocation',  storagelocationother = '$storagelocationother', coolercomments = '$coolercomments', mreport = '$mreport', illness = '$illness', illnesscomment = '$illnesscomment', illnessbegan = '$illnessbegan', illnessend = '$illnessend', symptomdescription = '$symptomdescription', fever = '$fever', feverstart = '$feverstart', feverend = '$feverend', meduse = '$meduse', medtypes = '$medtypes', dosage = '$dosage', dosagestart = '$dosagestart', dosageend = '$dosageend', reportcomments = '$reportcomments', signature = '$signature', signaturedate = '$signaturedate', diet = '$diet', rxbcchoose = '$rxbcchoose', rxbcdate = '$rxbcdate', milkgrade = '$milkgrade', storefrom = '$storefrom', babysdob = '$babysdob', donorstatus = '$donorstatus'  WHERE packagenumber = $packagenumber";
 
+/*
 echo "</br>";
 echo "</br>";
 echo $sql;
 echo "</br>";
 echo "</br>";
+*/
 
 $result = mysql_query($sql, $con);
 
@@ -535,13 +537,13 @@ $transactionnumber = $lasttransactionnumber + 1;
 
 
        $sql = "insert into receivertablelog (organization, organizationother, donornumberr, receivedate, expressiondatefrom, expressiondateto, expressionrange, packagenumber, numberofounces, coolernumber, packetstate, packetstateother, storagelocation, storagelocationother, user, transactionnumber, transactiontype, transactiondate, coolercomments, mreport, illness, illnesscomment, illnessbegan, illnessend, symptomdescription, fever, feverstart, feverend, meduse, medtypes, dosage, dosagestart, dosageend, reportcomments, signature, signaturedate, diet, rxbcchoose, rxbcdate, milkgrade, storefrom, babysdob, donorstatus) values ('$organization', '$organizationother', $dnum, '$rdate', '$expressiondatefrom', '$expressiondateto', '$expressionrange', '$packagenumber', $numberofounces, $coolernumber, '$packetstate', '$packetstateother', '$storagelocation', '$storagelocationother', '$user', $transactionnumber, 'Edited', '$rdate', '$coolercomments', '$mreport', '$illness', '$illnesscomment', '$illnessbegan', '$illnessend', '$symptomdescription', '$fever', '$feverstart', '$feverend', '$meduse', '$medtypes', '$dosage', '$dosagestart', '$dosageend', '$reportcomments', '$signature', '$signaturedate', '$diet', '$rxbcchoose', '$rxbcdate', '$milkgrade', '$storefrom', '$babysdob', '$donorstatus')";
-
+/*
 echo "</br>";
 echo "</br>";
 echo $sql;
 echo "</br>";
 echo "</br>";
-
+*/
 $result = mysql_query($sql, $con);
 
 if (!$result) 
@@ -572,13 +574,13 @@ if ($packetstate=="$packetsearch")
          $processnumber = $processnumber - 1;
          $sql = "update screenertable set processnumber = $processnumber WHERE donornumber = $dnum";
 
-
+/*
 echo "</br>";
 echo "</br>";
 echo $sql;
 echo "</br>";
 echo "</br>";
-
+*/
 
 
          $result = mysql_query($sql, $con); 
@@ -591,11 +593,11 @@ echo "</br>";
              }
 
      }
-
+/*
 echo "</br>"; 
 echo "processnumber: " . $processnumber;
 echo "</br>";
-
+*/
 
 // Set the processflag to 'N' when user process package  
 
@@ -604,13 +606,13 @@ if ($processnumber == 0)
    {
      $sql = "update screenertable set processflag ='N' WHERE donornumber = $dnum";
 
-
+/*
 echo "</br>";
 echo "</br>";
 echo "sql:" . $sql;
 echo "</br>";
 echo "</br>";
-
+*/
 
      $result = mysql_query($sql, $con);
 
@@ -692,7 +694,7 @@ mysql_close($con);
 echo "</br>";
 echo "</br>";
 
-$processnumber = 1;
+// change links depending on "Daily Search"
 
 if ($processnumber == 0) 
     {

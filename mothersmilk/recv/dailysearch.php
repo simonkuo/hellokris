@@ -1,8 +1,8 @@
 <html>
 <head>
-<!--
+
 <?php include '../mystyle.php'; ?>
--->
+
 
 </head>
 <body>
@@ -16,9 +16,8 @@
  
 <b>Donor Status</b>&nbsp;&nbsp;
 
-<select name="determinechoose" id="determinechoose" onchange="showme2('determinechoose','determine')">
+<select name="determinechoose">
 <option value="N/A" >Please Select</option>   
-<option value="A" >Applied or Awaiting</option>
 <option value="F"  >Failed</option>
 <option value="D" >Donor Accepted</option>
 </select>

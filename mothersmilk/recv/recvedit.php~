@@ -36,7 +36,6 @@ include '../include/mystylex.php';
 
 $packagenumber = $_GET["packagenumber"];
 
-$processnumber = $_POST["processnumber"];
 
 
 // connect to database
@@ -561,13 +560,12 @@ $processnumber = $row['processnumber'];
 
 echo "<input type=\"hidden\" name=\"processnumber\" value=\"$processnumber\">\n";
 
-
+/*
 echo "</br>";
 echo "processnumber: " . $processnumber;
 echo "</br>";
+*/
 
-
-echo "</br>"; 
 
 echo "</br>\n";
 
