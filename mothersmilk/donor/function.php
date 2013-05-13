@@ -147,4 +147,7 @@ function insert_followup_data_log($followup_data){
         }
 
 }
+function batch_result($batchNumber, $bottleNumber){
+	return mysql_result(mysql_query("SELECT COUNT(`batchnumber`) FROM `labsampleresult` WHERE `batchnumber` = $batchNumber AND `bottlenumber` = $bottleNumber "),0);
+}
 ?>
