@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 13, 2013 at 05:40 PM
+-- Generation Time: May 20, 2013 at 06:07 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.4.3
 
@@ -53,17 +53,6 @@ CREATE TABLE IF NOT EXISTS `batch` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `code`
---
-
-CREATE TABLE IF NOT EXISTS `code` (
-  `code` varchar(8) NOT NULL,
-  `title` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `labtable`
 --
 
@@ -105,6 +94,28 @@ CREATE TABLE IF NOT EXISTS `labtest` (
   `MRSA` char(2) NOT NULL COMMENT 'MRSA test, AB-Absent, PR-present, PE-pending',
   `TestStatus` char(1) NOT NULL COMMENT 'R-retest, F-failed, P-pending, S-success(passed)'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `organization`
+--
+
+CREATE TABLE IF NOT EXISTS `organization` (
+  `code` varchar(8) NOT NULL,
+  `title` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `organization`
+--
+
+INSERT INTO `organization` (`code`, `title`) VALUES
+('MIHA', 'Maricopa Integrated Health System'),
+('CRCF', 'Community Regional Ctr. Fresno'),
+('NAHC', 'Native American Health Ctr.'),
+('SMB', 'Sharp Mary Birch'),
+('SVMC', 'Valley Medical Center');
 
 -- --------------------------------------------------------
 
