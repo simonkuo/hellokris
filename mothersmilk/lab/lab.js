@@ -3,8 +3,9 @@ $(document).ready(function(){
 	//alert("test");
 	addSelectBoxBaseOnType();
 	addSelectBoxIfStaphylococcusPresent();
-	addInputFieldForRetest();
-	displayTypeOfTest();
+	displayMRSASelectBoxIfStaphylococcusPresent();
+	addTypeValue();
+	
 });
 //Display type of test
 function displayTypeOfTest()
@@ -38,6 +39,45 @@ function displayTypeOfTest()
 		{
 			$('.twoColumn').fadeOut();
 		
+		}
+		
+	});
+};
+//Add search for indidual of type
+function addTypeValue()
+{
+	
+	$('#outstanding').change(function() {
+		
+		var selectVal = $('select#outstanding').val();
+		//alert(selectVal);
+		$('#optionalType').html('');
+		if (selectVal === 'no') 
+			{
+			
+                
+			var form =
+				'<label>Type</label>'
+				+ '<select id="type" name = "type">'
+				+ '<option value="package">package</option>'
+				+ '<option value="bluePool">bluePool</option>'
+				+ '<option value="batch">batch</option>'
+				+ '</select>'
+				+ '<input type="text" name="sampleId">';
+
+			$('#optionalType').append(form);
+            }
+		else if (selectVal === 'yes')
+		{
+			var form =
+				'<label>Type</label>'
+				+ '<select id="type" name = "type">'
+				+ '<option value="all">all</option>'
+				+ '<option value="package">package</option>'
+				+ '<option value="bluePool">bluePool</option>'
+				+ '<option value="batch">batch</option>'
+				+ '</select>';
+			$('#optionalType').append(form);
 		}
 		
 	});
@@ -85,29 +125,48 @@ function addSelectBoxBaseOnType()
 //Add select box when staphylococcus is present
 function addSelectBoxIfStaphylococcusPresent()
 {
-	//alert("test");
+	
+	$('#methicillin-resistant').css({
+					"display": "none",
+					"visibility":"hidden"
+					});
 	$('#staphylococcus').change(function() {
 		
 		var selectVal = $('select#staphylococcus').val();
 		
-		$('#methicillin-resistant').html('');
+		
 		if (selectVal === 'present') 
 			{
-			//alert(selectVal);
-                
-			var form =
-				'<label>Methicillin-resistant Staphylococcus Aureus</label>'
-				+ '<select id="MRSA" name = "MRSA">'
-				+ '<option value="N/A">Select</option>'
-				+ '<option value="absent">absent</option>'
-				+ '<option value="present">present</option>'
-				+ '<option value="pending">pending</option>'
-				+ '</select>';
-
-			$('#methicillin-resistant').append(form);
+		
+				$('#methicillin-resistant').css({
+						"display": "block",
+						"visibility":"visible"
+				});
             }
+		else
+			{
+				$('#methicillin-resistant').css({
+					"display": "none",
+					"visibility":"hidden"
+					});
+			}
+
 	});
 };
+function displayMRSASelectBoxIfStaphylococcusPresent()
+{
+	var selectVal = $('select#staphylococcus').val();
+		
+		
+		if (selectVal === 'present') 
+			{
+		
+				$('#methicillin-resistant').css({
+						"display": "block",
+						"visibility":"visible"
+				});
+            }
+}
 function addInputFieldForRetest()
 {
 	$('#retest').change(function() {

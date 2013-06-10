@@ -1,85 +1,155 @@
+<?php
+session_start();
+// store session data
+
+?>
 <html>
 <head>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="lab.js"></script>
 </head>
 <div>
-	<form method="post">
+<?php
+include "../donor/function.php";
+//$con = mysql_connect("localhost",$_SESSION["uname"],$_SESSION["pwd"]);
+$mysqli = new mysqli("localhost",$_SESSION["uname"],$_SESSION["pwd"],'milk_db');
+
+if (mysqli_connect_errno())
+{
+	printf("Connect failed : %s\n", mysqli_connect_error());
+	exit();
+}
+//mysql_select_db('milk_db', $con);
+/*
+if (!mysql_select_db('milk_db', $con)) {
+    echo 'Could not select database';
+    exit;
+}
+*/
+$sampleId = "";
+if (isset($_GET["sampleId"])) {
+	$sampleId = $_GET["sampleId"];
+	//echo $sampleId;
+} 
+$result = lab_sample_result_information($mysqli,$sampleId);
+
+//echo $num;
+$row = $result->fetch_assoc();
+//$row = mysql_fetch_assoc($result);
+$type = $row['type'];
+$employee = $row['employeeId'];
+$dateofsample = $row['dateofsample'];
+$dateofcomplete = $row['dateofcomplete'];
+$CFU = $row['CFU'];
+$SPP = $row['SPP'];
+$staph = $row['staph'];
+$MRSA = $row['MRSA'];
+
+
+
+?>
+	<form action = "labSampleAddConfirm.php?sampleId=<?php echo $sampleId ?>" method="post">
 		<div>
-		<label>Date Lab Test Completed:</label>
-		<input type="text" name="dateLabTestCompleted" placeholder="mm-dd-yyyy">
+		<label>Sample Number:</label>
+		<span><?php echo $sampleId?></span>
 		</div>
 		<div>
-			<label>Type of test</label>
-			<select name="testType" id="testType">
-			<option value="N/A">Select</option>
-			<option value="firstTest">First Test</option>
-			<option value="reTest">Retest</option>
+		<label>Type:</label>
+		<span><?php echo $type?></span>
+		</div>
+		<div>
+		<label>EmployeeId:</label>
+		<span><?php echo $employee?></span>
+		</div>
+		<div>
+		<label>Date of sample:</label>
+		<span><?php echo $dateofsample?></span>
+		</div>
+		<div>
+		<label>Date of complete:</label>
+		<span><?php echo $dateofcomplete?></span>
+		</div>
+		<div>
+			<label>Enter the CFU per ML value:</label>
+			<?php
+			if ($type === 'package' || $type === 'bluepool')
+			{
+				
+				echo '<select id="CFUvalue" name = "CFUvalue">';
+				echo '<option value="N/A" ';
+				if ($CFU == "N/A") echo "selected";
+				echo '>Select</option>';
+				echo '<option value="smallerOrEqualTenThousand" ';
+				if ($CFU == 'smallerOrEqualTenThousand') echo "selected";
+				echo '> < or = 10,000</option>';
+				echo '<option value="fromTenThousandToFiftyThousand" ';
+				if ($CFU == 'fromTenThousandToFiftyThousand') echo "selected";
+				echo '>10,000 to 50,000</option>';
+				echo '<option value="fromFiftyThousandToHundredThousand" ';
+				if ($CFU == 'fromFiftyThousandToHundredThousand') echo "selected";
+				echo '>50,000 to 100,000</option>';
+				echo '<option value="largerThanHundredThousand" ';
+				if ($CFU == 'fromFiftyThousandToHundredThousand') echo "selected";
+				echo '> > 100,000</option>';
+				echo '</select>';
+			}
+			else
+			{
+				
+				echo '<select id="CFUvalue" name = "CFUvalue">';
+				echo '<option value="N/A" ';
+				if ($CFU == "N/A") echo "selected";
+				echo '>Select</option>';
+				echo '<option value="smallerThanOne" ';
+				if ($CFU == 'smallerThanOne') echo "selected";
+				echo '> < 1</option>';
+				echo '<option value="fromOneToFour" ';
+				if ($CFU == 'fromOneToFour') echo "selected";
+				echo'>1 to < 5</option>';
+				echo '<option value="fromFiveToTen" ';
+				if ($CFU == 'fromFiveToTen') echo "selected";
+				echo'>5 to 10</option>';
+				echo '<option value="largerThanTen" ';
+				if ($CFU == 'largerThanTen') echo "selected";
+				echo'> > 10</option>';
+				echo '</select>';
+			}
+			?>
+			
+		</div>
+		<div>
+			<label>Baccilles SPP</label>
+			<select name="baccillesSPP" id="baccillesSPP">
+			<option value="N/A" <?php if ($SPP == 'N/A') echo "selected";?> >Select</option>
+			<option value="absent" <?php if ($SPP == 'absent') echo "selected";?> >absent</option>
+			<option value="present" <?php if ($SPP == 'present') echo "selected";?> >present</option>
+			<option value="pending" <?php if ($SPP == 'pending') echo "selected";?> >pending</option>
+			</select>
+		</div>
+		<div>
+			<label>Staphylococcus aureus</label>
+			<select name="staphylococcus" id="staphylococcus">
+			<option value="N/A" <?php if ($staph == 'N/A') echo "selected";?> >Select</option>
+			<option value="absent" <?php if ($staph == 'absent') echo "selected";?>>absent</option>
+			<option value="present" <?php if ($staph == 'present') echo "selected";?> >present</option>
+			<option value="pending" <?php if ($staph == 'pending') echo "selected";?>>pending</option>
 			</select>
 			
 		</div>
-		<div class="twoColumn" style="display:none">
-			<div id = "displayPreviousResult" style="display:none">
-				<div>Test</div>
-			</div>
-			<div id = "editSampleResult">
-				<div>
-					<label>Enter the CFU per ML </label>
-					<select name="type" id="type">
-					<option value="N/A">Select</option>
-					<option value="pre-pasteurization">pre-pasteurization</option>
-					<option value="post-pasteurization">post-pasteurization</option>
-					</select>
-					<span id="optionalParameter"></span>
-				</div>
-				<div>
-					<label>Baccilles SPP</label>
-					<select name="baccillesSPP" id="baccillesSPP">
-					<option value="N/A">Select</option>
-					<option value="absent">absent</option>
-					<option value="present">present</option>
-					<option value="pending">pending</option>
-					</select>
-				</div>
-				<div>
-					<label>Staphylococcus aureus</label>
-					<select name="staphylococcus" id="staphylococcus">
-					<option value="N/A">Select</option>
-					<option value="absent">absent</option>
-					<option value="present">present</option>
-					<option value="pending">pending</option>
-					</select>
-					<span id="methicillin-resistant"></span>
-				</div>
-				<div>
-					<label>Need Retest</label>
-					<select name="retest" id="retest">
-					<option value="N/A">Select</option>
-					<option value="yes">yes</option>
-					<option value="no">no</option>
-					</select>
-					<span id="retestOptionalInput"></span>
-				</div>
-				<div>
-
-						<label>Result</label>
-						<select name="result" id="result">
-						<option value="N/A">Select</option>
-						<option value="cleared">cleared</option>
-						<option value="quarantined">quarantined</option>
-						<option value="research">research</option>
-						<option value="destroy">destroy</option>
-						</select>
-
-					<span>
-						<label>Date</label>
-						<input type="int" name="monthRetest" placeholder="mm" maxlength="2" size="2">
-						<input type="int" name="dayRetest" placeholder="dd" maxlength="2" size="2">
-						<input type="int" name="yearRetest" placeholder="yyyy" maxlength="4" size="4">
-					</span>
-				</div>
-			</div>
+		<div id ="methicillin-resistant" ">
+			<label>Methicillin-resistant Staphylococcus Aureus</label>
+			<select id="MRSA" name = "MRSA">
+			<option value="N/A" <?php if ($MRSA == "N/A") echo "selected";?> >Select</option>'
+			<option value="absent" <?php if ($MRSA == "absent") echo "selected";?> >absent</option>'
+			<option value="present" <?php if ($MRSA == "present") echo "selected";?> >present</option>'
+			<option value="pending" <?php if ($MRSA == "pending") echo "selected";?> >pending</option>'
+			</select>
 		</div>
+		<input type="submit" value="Submit">	
+	
 	</form>
+<?php
+mysqli_close($mysqli);
+?>
 </div>
 </html>
