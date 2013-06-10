@@ -57,7 +57,7 @@ $appyy = (idate("Y"));
 // echo "<br>";
 echo "<p><span><font size=5>Donor Screening</font></span></p>\n";
 
-echo "<form action=\"dnrcnfrm.php?donornumber=$donornumber&ctype=2\" method=\"post\">\n";
+echo "<form action=\"dnrcnfrm.php?donornumber=$donornumber&ctype=2\" onsubmit=\"return validate();\" method=\"post\">\n";
 // echo "Donor number:&nbsp;&nbsp; ";
 echo "Doner Number:&nbsp;&nbsp;" . "<span>" . $donornumber . "</span>";
 echo "</br>\n";
@@ -109,13 +109,13 @@ Organization:&nbsp;&nbsp;&nbsp;
 <?php
 echo "</br>\n";
 echo "</br>\n";
-echo "First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type=\"text\" name=\"donorfname\" size=\"25\" maxlength=\"20\" >";
+echo "First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type=\"text\" id=\"donorfname\" name=\"donorfname\" size=\"25\" maxlength=\"20\" >";
 echo "</br>\n";
 echo "</br>\n";
 echo "Middle Name:&nbsp; <input type=\"text\" name=\"donormname\" size=\"25\" maxlength=\"20\">\n";
 echo "</br>\n";
 echo "</br>\n";
-echo "Last Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type=\"text\" name=\"donorlname\" size=\"25\" maxlength=\"20\">\n";
+echo "Last Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type=\"text\" id=\"donorlname\" name=\"donorlname\" size=\"25\" maxlength=\"20\">\n";
 echo "</br>\n";
 echo "</br>\n";
 echo "AKA: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type=\"text\" name=\"donoraka\" size=\"25\" maxlength=\"20\">\n";
@@ -131,12 +131,12 @@ echo "&nbsp;&nbsp;Country:&nbsp;&nbsp; <input type=\"text\" name=\"country\" siz
 echo "</br>\n";
 echo "</br>\n";
 
-echo "Home Phone:&nbsp;&nbsp; <input type=\"text\" name=\"hphoneac\" size=\"3\" maxlength=\"3\">\n";
-echo "&nbsp;" . "-" . "&nbsp; <input type=\"text\" name=\"hphonepr\" size=\"3\" maxlength=\"3\">\n";
-echo "&nbsp;" . "-" . "&nbsp; <input type=\"text\" name=\"hphonesu\" size=\"4\" maxlength=\"4\">\n";
-echo "&nbsp;&nbsp;Cell Phone:&nbsp;&nbsp; <input type=\"text\" name=\"cphoneac\" size=\"3\" maxlength=\"3\">\n";
-echo "&nbsp;" . "-" . "&nbsp; <input type=\"text\" name=\"cphonepr\" size=\"3\" maxlength=\"3\">\n";
-echo "&nbsp;" . "-" . "&nbsp; <input type=\"text\" name=\"cphonesu\" size=\"4\" maxlength=\"4\">\n";
+echo "Home Phone:&nbsp;&nbsp; <input type=\"text\" pattern=\"\d{3}\" name=\"hphoneac\" size=\"3\" maxlength=\"3\">\n";
+echo "&nbsp;" . "-" . "&nbsp; <input type=\"text\" pattern=\"\d{3}\" name=\"hphonepr\" size=\"3\" maxlength=\"3\">\n";
+echo "&nbsp;" . "-" . "&nbsp; <input type=\"text\" pattern=\"\d{4}\" name=\"hphonesu\" size=\"4\" maxlength=\"4\">\n";
+echo "&nbsp;&nbsp;Cell Phone:&nbsp;&nbsp; <input type=\"text\" pattern=\"\d{3}\" name=\"cphoneac\" size=\"3\" maxlength=\"3\">\n";
+echo "&nbsp;" . "-" . "&nbsp; <input type=\"text\" pattern=\"\d{3}\" name=\"cphonepr\" size=\"3\" maxlength=\"3\">\n";
+echo "&nbsp;" . "-" . "&nbsp; <input type=\"text\" pattern=\"\d{4}\" name=\"cphonesu\" size=\"4\" maxlength=\"4\">\n";
 
 echo "</br>\n";
 echo "</br>\n";
