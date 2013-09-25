@@ -1,0 +1,494 @@
+html 
+{
+   min-height: 100%;
+}
+
+a, a:visited, a:active, a:link
+{
+  color: #000;
+}
+#pageContent
+{
+   margin: 0;
+   width: 1024px;
+}
+
+#header
+{
+  background-color: #ccccfe;
+  border: 2px solid #000000;
+   border-radius: 5px;
+   clear: both;
+}
+#header img
+{
+  display: block;
+}
+#header #SiteHeaderText
+{
+  font:bold 2em Helvetica;
+  color: #fff;
+  text-shadow: 3px 3px 3px #000;
+  -ms-text-shadow: 3px 3px 3px #000;
+  -o-text-shadow: 3px 3px 3px #000;
+  -webkit-text-shadow: 3px 3px 3px #000;
+  -moz-text-shadow: 3px 3px 3px #000;
+  position: relative;
+  z-index: 4;
+  top: -80px;
+  left: 260px;
+  float: left;  
+}
+  
+#footer
+{
+   border: 3px solid #000;
+   margin-top: 30px;
+   padding: 15px;
+   clear: both;
+   border-radius: 5px;
+} 
+
+#content
+{
+   padding: 15px;
+   overflow: auto;
+   width: 100%;
+}
+
+#messagebar
+{
+  text-align: right;
+}
+#messagebar label
+{
+  font-weight: bold;
+  padding-right: 5px;
+}
+
+.crumbpath
+{
+ text-align: left;
+}
+
+span.logoutbutton
+{
+   border: 2px solid #000;
+   padding: 5px 5px 5px 5px;
+   border-radius: 15px;
+   box-shadow: 2px 2px #808080;
+   text-align: center;
+   width: 180px;
+   color: #fff;
+   background: #800000;
+   margin-top: 15px;
+}
+
+span.logoutbutton a, span.logoutbutton a:link, span.logoutbutton a:visited, span.logoutbutton a:active
+{
+  color: #fff;
+  text-decoration: none;
+}
+
+h1.pageTitle
+{
+  margin: 0;
+  text-align:center;
+  padding-bottom: 10px;
+}
+.tileRow
+{
+  padding: 5px;
+  float: none;
+  clear: both;
+  
+}
+
+.Tile
+{
+ border: 3px solid #000;
+  padding-top: 25px;
+  width: 235px;
+  height: 120px;
+  margin: 5px;
+  float: left;
+  -moz-box-shadow: 10px 10px 5px #888;
+  -webkit-box-shadow: 10px 10px 5px #888;
+  box-shadow: 5px 5px;
+ font:bold 1.7em Arial; 
+}
+.startTile
+{
+  border: 3px solid #000;
+  padding-top: 25px;
+  width: 235px;
+  height: 120px;
+  margin: 5px;
+  float: left;
+  -moz-box-shadow: 10px 10px 5px #888;
+  -webkit-box-shadow: 10px 10px 5px #888;
+  box-shadow: 5px 5px;
+  text-align: center;
+  vertical-align: center;
+  font:bold 1.7em Arial; 
+}
+
+
+.screenerTile{ background-color: #cccc66;}
+.receiverTile{ background-color: #ff9966;}
+.labTile{ background-color: #808080;}
+.recipientTile{ background-color: #cc9933;}
+.accountingTile{ background-color: #009900;}
+.adminTile{ background-color:#800000;}
+.researcherTile{ background-color:#008080; }
+.reportsTile{ background-color:#333399; }
+
+table#results
+{
+   width: 95%;
+   border: 1px solid #000;
+   border-spacing:0;
+  border-collapse:collapse;
+}
+tr.resultHeader
+{
+   color: #fff;
+   background: gray;
+   font-weight: bold;
+}
+
+tr.resultHeader td 
+{
+  padding: 5px 5px 5px 25px;
+}
+table#results a.buttonlink
+{
+  padding: 2px;
+  border: 1px solid #000;
+  border-radius: 15px;
+  box-shadow: 2px 2px #808080;
+  color: #fff;
+  background: green; 
+  font-weight: bold;
+  text-decoration: none;
+  width: 80px;
+  margin: auto;
+}
+.resultRow
+{
+  background: #FFF;
+  color: #000;
+  padding: 5px;
+}
+.resultAltRow
+{
+  background: #C0C0C0;
+  color: #000;
+  padding: 5px; 
+}
+
+.resultAltRow td, .resultRow td
+{
+  padding: 5px 5px 5px 25px;
+}
+
+section.block
+{
+  width: 300px;
+  height: 300px;
+  padding: 5px;
+  margin: 5px; 
+}
+
+
+section.centerblock
+{
+  margin: auto;
+  width: 220px;
+  display: block;
+}
+
+div.actionbutton
+{
+   border: 2px solid #000;
+   padding: 15px 5px 15px 5px;
+   border-radius: 15px;
+   box-shadow: 5px 5px #808080;
+   text-align: center;
+   width: 180px;
+ /*  color: #fff;
+   background: #800000;
+ */  
+   margin-top: 15px;
+ 
+}
+
+
+
+div.actionbutton a, div.actionbutton a:visited, div.actionbutton a:link, div.actionbutton a:active
+{
+   text-decoration: none;
+   color: inherit;
+   font-size: 16px;
+   font-weight: bold;
+}
+
+
+/* -------- form fields ---------------*/
+form fieldset
+{
+   width: 30%;
+   float: left;
+   display: block;
+}
+form fieldset legend
+{
+  font-weight: bold;
+  font-size: 16px;
+
+}
+form label
+{
+  font-weight: bold;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+form div.sectionBlock
+{
+  float:left;
+  margin: 10px;
+  width: 450px;
+}
+form div.sectionBlock p
+{
+  width: 100%;  
+}
+form div.sectionBlock p label
+{
+  width: 290px;
+  padding-right: 5px;
+}
+form div.sectionBlock p input
+{
+   width: 290px;
+}
+
+form input
+{
+  padding-left: 5px;
+}
+form span.button
+{
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 15px;
+  color: #fff;
+  background: green; 
+}
+
+fieldset.search
+{
+  float: left;
+  margin-left: 5px;
+  margin-top: 5px;
+  height: 350px;
+  padding-top: 5px;
+  border: 1px solid #000;
+}
+fieldset.search legend
+{
+  font-weight: bold;
+  text-align: center;
+}
+
+input[type=submit] 
+{ 
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 15px;
+  box-shadow: 2px 2px #808080;
+  color: #fff;
+  background: green; 
+  font-weight: bold;
+}
+
+input.backbutton 
+{ 
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 15px;
+  box-shadow: 2px 2px #808080;
+  color: #fff;
+  background: green; 
+  font-weight: bold;
+}
+
+a.button
+{
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 15px;
+  box-shadow: 2px 2px #808080;
+  color: #fff;
+  background: green; 
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  width: 150px;
+  text-align: center;
+}
+
+span.legendicon
+{
+  color: white;
+  width: 10px;
+  padding: 3px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.screenericon{ background-color: #cccc66;}
+.receivericon{ background-color: #ff9966;}
+.labicon{ background-color: #808080;}
+.recipienticon{ background-color: #cc9933;}
+.accountingicon{ background-color: #009900;}
+.adminicon{ background-color:#800000;}
+.researchicon{ background-color:#008080; }
+.reportsicon{ background-color:#333399; }
+
+span.message
+{
+   font-size: 20px;
+   font-weight: bold;
+}
+.screenerColor{ background-color: #cccc66; color:#000;}
+.receiverColor{ color: #000; background-color: #ff9966;}
+.labColor{ background-color: #808080; color: #000;}
+.recipientColor{ background-color: #cc9933; color: #000;}
+.accountingColor{ background-color: #009900; color: #000;}
+.adminColor{ background-color:#800000; color:#fff;}
+.researcherColor{ background-color:#008080; color:#000;}
+.reportsColor{ background-color:#333399; color:#000;}
+
+label
+{
+  font-weight: bold;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+div.sectioncolumn
+{
+   float: left;
+   padding: 10px 30px 10px 0px;
+} 
+
+div.section
+{
+   clear: both;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   width: 100%;
+}
+
+fieldset.sectiondisplay
+{
+   padding-left: 30px; 
+   margin-top: 20px;
+   border: 2px solid #000;
+   display: inline-block;
+   width: 95%;
+}
+
+fieldset.sectiondisplay legend
+{
+   font-weight: bold;
+   border: 1px solid #000;
+   padding: 5px 10px 5px 10px;
+   border-radius: 20px 10px;
+}
+
+br.clear
+{
+   clear: both;
+}
+
+div.twoColumnSection
+{
+   width: 45%;
+}
+
+h2.sectionTitle
+{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+a.pageNavPrev, a:link.pageNavPrev, a:visited.pageNavPrev, a:active.pageNavPrev
+{
+   border: 1px solid #000;
+   padding: 5px 10px 5px 10px;
+   border-radius: 45px 0 0 45px;
+   color: #fff;
+   background: green;
+   text-decoration: none;
+}
+a.pageNavNext, a:link.pageNavNext, a:visited.pageNavNext, a:active.pageNavNext
+{
+   border: 1px solid #000;
+   padding: 5px 10px 5px 10px;
+   border-radius: 0px 45px 45px 0px;
+   color: #fff;
+   background: green;
+   text-decoration: none;
+}
+a.pageNavDirLink, a:link.pageNavDirLink, a:visited.pageNavDirLink, a:active.pageNavDirLink
+{
+   border: 1px solid #000;
+   color: #fff;
+   background: grey;
+   padding: 5px;
+   margin: 2px;
+   text-decoration: none;
+}
+a.pageNavDirLinkCur, a:link.pageNavDirCur, a:visited.pageNavDirCur, a:active.pageNavDirCur
+{
+   border: 1px solid #000;
+   color: red;
+   background: grey;
+   padding: 5px;
+   margin: 2px;
+   text-decoration: none;
+}
+
+
+div.pageNav
+{
+   margin: 5px;
+   padding: 5px;
+}
+
+label.formDisplay
+{
+    width:155px;
+	display:inline-block;
+	text-align: top;
+	padding:5px;
+	/*margin-top: 2px;*/
+}
+label.title
+{
+   text-decoration: underline;
+}
+
+span.data
+{
+   color: #000;
+}
+span.dataHighlight
+{
+   background: red;
+   color: #fff;
+   padding: 2px;
+}

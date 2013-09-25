@@ -1,0 +1,66 @@
+<html>
+<head>
+
+<style type="text/css" rel="stylesheet">
+#mysubmit { background-color: aqua; font-size: 150%;
+    padding: 10px; font-weight: bold; }
+li {display:inline;}
+</style>
+
+</head>
+<body>
+<!-- <h1>Donor Search</h1> 
+</br>
+
+<form action="./donormenu.html" style="display:inline">
+       <input type="submit" id="mysubmit" value="Donor Menu">
+</form>
+
+<br>
+-->
+<br>
+
+
+<p><b>Donor Application Date:</b></p>
+
+<form action="donorslt.php" method="post">
+
+<p>From: 
+<br>
+<input type="int" name="fdnrapmm" size="2" maxlength="2">&nbsp;
+<input type="int" name="fdnrapdd" size="2" maxlength="2">&nbsp;
+<input type="int" name="fdnrapyr" size="4" maxlength="4">
+&nbsp;mm-dd-yyyy
+</p>
+<br>
+
+
+<p>To:
+<br> 
+<input type="int" name="tdnrapmm" size="2" maxlength="2">&nbsp;
+<input type="int" name="tdnrapdd" size="2" maxlength="2">&nbsp;
+<input type="int" name="tdnrapyr" size="4" maxlength="4">
+&nbsp;mm-dd-yyyy
+</p>
+
+
+
+</br>
+
+<p><b>Last Name</b>&nbsp;&nbsp;<input type="text" name="lastname"></p>
+ 
+<p><b>Donor #</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="int" name="donornumber"></p>
+ 
+</br>
+</br>
+<input type="submit" value="Search">
+</br>
+</form>
+
+<br>
+<P><a href="./donormenu.php">Donor Menu</a></P>
+</br>
+</br>
+ 
+</body>
+</html>
